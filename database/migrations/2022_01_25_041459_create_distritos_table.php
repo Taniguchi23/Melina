@@ -16,6 +16,7 @@ class CreateDistritosTable extends Migration
         Schema::create('distritos', function (Blueprint $table) {
             $table->id();
             $table->foreignId('region_id')->references('id')->on('regions');
+            $table->string('url_seo',55);
             $table->string('nombre',45);
             $table->timestamps();
         });

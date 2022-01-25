@@ -16,6 +16,7 @@ class CreateRegionsTable extends Migration
         Schema::create('regions', function (Blueprint $table) {
             $table->id();
             $table->string('nombre',45);
+            $table->string('url_seo',55);
             $table->timestamps();
         });
     }
