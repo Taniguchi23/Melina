@@ -17,6 +17,7 @@ class CreateEventosTable extends Migration
             $table->id();
             $table->string('slug',60);
             $table->string('titulo',65);
+            $table->string('descripcion');
             $table->string('contenido');
             $table->string('fecha')->nullable();
             $table->string('imagen')->nullable();

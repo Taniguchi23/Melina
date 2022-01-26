@@ -8,7 +8,8 @@
                     <h3>{{$distrito->nombre}} : Encuesta Virtual </h3>
                     <img src="{{Storage::url($evento->imagen)}}" alt="img" width="700px">
                     <h5>{{$evento->created_at}}</h5>
-                   {{$evento->contenido}}
+                    <h3>{{$evento->descripcion}}</h3>
+                    <h2> {{$evento->contenido}}</h2>
 
 
 
@@ -54,8 +55,8 @@
                                 <img src="{{Storage::url($eve->imagen)}}" alt="img" class="fh5co_most_trading"/>
                             </div>
                             <div class="col-7 paddding">
-                                <div class="most_fh5co_treding_font"> {{$eve->contenido}}</div>
-                                <a href="/peru/{{$distrito->region->url_seo}}/{{$eve->slug}}/{{$eve->fecha}}"><div class="most_fh5co_treding_font_123">{{$eve->created_at}}</div></a>
+                                <div class="most_fh5co_treding_font"> {{$eve->titulo}}</div>
+                                <a href="/peru/{{$distrito->region->url_seo}}/{{$eve->slug}}/{{$eve->fecha}}"><span class="most_fh5co_treding_font_123">{{$eve->created_at}}</span></a>
                             </div>
                         </div>
                     @endforeach

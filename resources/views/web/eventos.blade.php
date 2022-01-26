@@ -20,7 +20,7 @@
                                 <a href="/peru/{{$distrito->region->url_seo}}/{{$evento->slug}}/{{$evento->fecha}}" class="fh5co_magna py-2"> {{$evento->titulo}}  </a>
                                 <a href="/peru/{{$distrito->region->url_seo}}/{{$evento->slug}}/{{$evento->fecha}}" class="fh5co_mini_time py-3"> Encuesta -
                                     April 18,2016 </a>
-                                <div class="fh5co_consectetur"> {{$evento->contenido}}
+                                <div class="fh5co_consectetur"> {{$evento->descripcion}}
                                 </div>
                             </div>
                         </div>
@@ -47,7 +47,7 @@
                                 <img src="{{Storage::url($eve->imagen)}}" alt="img" class="fh5co_most_trading"/>
                             </div>
                             <div class="col-7 paddding">
-                                <div class="most_fh5co_treding_font"> {{$eve->contenido}}</div>
+                                <div class="most_fh5co_treding_font"> {{$eve->titulo}}</div>
                                 <a href="/peru/{{$distrito->region->url_seo}}/{{$eve->slug}}/{{$eve->fecha}}"><div class="most_fh5co_treding_font_123">{{$eve->created_at}}</div></a>
                             </div>
                         </div>
