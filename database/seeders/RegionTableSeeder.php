@@ -23,6 +23,18 @@ class RegionTableSeeder extends Seeder
                 'nombre' => "Lima Norte",
                 'url_seo' => "lima-norte",
             ],
+            [
+                'nombre' => "Lima Centro",
+                'url_seo' => "lima-centro",
+            ],
+            [
+                'nombre' => "Lima Sur",
+                'url_seo' => "lima-sur",
+            ],[
+                'nombre' => "Callao",
+                'url_seo' => "callao",
+            ],
+
         ];
         Region::insert($regiones);
     }

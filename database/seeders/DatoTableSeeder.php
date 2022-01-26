@@ -55,11 +55,6 @@ class DatoTableSeeder extends Seeder
                 'evento_id' => 4,
                 'votos' => 45,
             ],
-            [
-                'candidato_id' => 1,
-                'evento_id' => 1,
-                'votos' => 5,
-            ],
 
         ];
         Dato::insert($datos);

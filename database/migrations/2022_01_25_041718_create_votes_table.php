@@ -17,7 +17,7 @@ class CreateVotesTable extends Migration
             $table->id();
             $table->foreignId('evento_id')->references('id')->on('eventos');
             $table->string('ip');
-            $table->date('fecha');
+            $table->date('fecha')->nullable();
             $table->timestamps();
         });
     }

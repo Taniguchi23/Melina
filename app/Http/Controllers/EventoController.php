@@ -27,7 +27,6 @@ class EventoController extends Controller
     }
     public function edit($id){
          $evento = Evento::find($id);
-
          return view('evento.edit', compact('evento'));
     }
     public function update(Request $request, $id){

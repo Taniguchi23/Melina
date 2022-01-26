@@ -19,6 +19,7 @@ class EventoTableSeeder extends Seeder
                 'slug' => "ate",
                 'titulo' => "ATE Encuesta Virtual Diciembre 2021",
                 'contenido' => "Esta encuesta comenzo el 01 al 31 de diciembre del 2021",
+                'imagen' => "public/distrito/ate.jfif",
                 'fecha' => "diciembre-2021",
                 'total_votos' => 300,
             ],
@@ -27,13 +28,7 @@ class EventoTableSeeder extends Seeder
                 'titulo' => "CIENEGUILLA Encuesta Virtual Diciembre 2021",
                 'fecha' => "diciembre-2021",
                 'contenido' => "Esta encuesta comenzo el 01 al 31 de diciembre del 2021",
-                'total_votos' => 300,
-            ],
-            [
-                'slug' => "chaclacayo",
-                'titulo' => "CHACLACAYO Encuesta Virtual Diciembre 2021",
-                'fecha' => "diciembre-2021",
-                'contenido' => "Esta encuesta comenzo el 01 al 31 de diciembre del 2021",
+                'imagen' => "public/distrito/ate.jfif",
                 'total_votos' => 300,
             ],
             [
@@ -41,6 +36,7 @@ class EventoTableSeeder extends Seeder
                 'titulo' => "ATE Encuesta Virtual Enero 2022",
                 'fecha' => "enero-2022",
                 'contenido' => "Esta encuesta comenzo el 01 al 31 de enero del 2022",
+                'imagen' => "public/distrito/ate.jfif",
                 'total_votos' => 300,
             ],
             [
@@ -48,15 +44,10 @@ class EventoTableSeeder extends Seeder
                 'titulo' => "CIENEGUILLAEncuesta Virtual Enero 2022",
                 'fecha' => "enero-2022",
                 'contenido' => "Esta encuesta comenzo el 01 al 31 de enero del 2022",
+                'imagen' => "public/distrito/ate.jfif",
                 'total_votos' => 300,
             ],
-            [
-                'slug' => "chaclacayo",
-                'titulo' => "CHACLACAYO Encuesta Virtual Enero 2022",
-                'fecha' => "enero-2022",
-                'contenido' => "Esta encuesta comenzo el 01 al 31 de enero del 2022",
-                'total_votos' => 300,
-            ],
+
         ];
         Evento::insert($eventos);
     }

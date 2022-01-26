@@ -14,27 +14,36 @@ class DistritoTableSeeder extends Seeder
      */
     public function run()
     {
+         //limaeste = 1 limanorte=2
         $distritos = [
             [
-                'region_id' => 1,
+                'region_id' => 1,//lima este
                 'url_seo' => "ate",
+
                 'nombre' => "Ate",
             ],
             [
                 'region_id' => 1,
                 'url_seo' => "cieneguilla",
                 'nombre' => "Cieneguilla",
+
+
             ],
             [
                 'region_id' => 1,
                 'url_seo' => "chaclacayo",
                 'nombre' => "Chaclacayo",
+
+
             ],
             [
                 'region_id' => 1,
                 'url_seo' => "el-agustino",
                 'nombre' => "El Agustino",
+
+
             ],
+
         ];
         Distrito::insert($distritos);
     }

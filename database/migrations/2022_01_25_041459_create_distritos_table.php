@@ -18,6 +18,7 @@ class CreateDistritosTable extends Migration
             $table->foreignId('region_id')->references('id')->on('regions');
             $table->string('url_seo',55);
             $table->string('nombre',45);
+            $table->string('imagen',75)->nullable();
             $table->timestamps();
         });
     }

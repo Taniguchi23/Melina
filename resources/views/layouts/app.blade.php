@@ -56,14 +56,7 @@
                     <a href="https://fb.com/fh5co" target="_blank" class="fh5co_display_table"><div class="fh5co_verticle_middle"><i class="fa fa-facebook"></i></div></a>
                 </div>
                 <!--<div class="d-inline-block text-center"><img src="images/country.png" alt="img" class="fh5co_country_width"/></div>-->
-                <div class="d-inline-block text-center dd_position_relative ">
-                    <select class="form-control fh5co_text_select_option">
-                        <option>English </option>
-                        <option>French </option>
-                        <option>German </option>
-                        <option>Spanish </option>
-                    </select>
-                </div>
+
                 <div class="clearfix"></div>
             </div>
         </div>
@@ -86,67 +79,67 @@
                         <a class="nav-link dropdown-toggle" href="#" id="dropdownMenuButton2" data-toggle="dropdown"
                            aria-haspopup="true" aria-expanded="false">LIMA ESTE <span class="sr-only">(current)</span></a>
                         <div class="dropdown-menu" aria-labelledby="dropdownMenuLink_1">
-                            <a class="dropdown-item" href="/lima/ate">ATE</a>
-                            <a class="dropdown-item" href="/lima/cieneguilla">CIENEGUILLA</a>
-                            <a class="dropdown-item" href="/lima/chaclacayo">CHACLACAYO</a>
-                            <a class="dropdown-item" href="/lima/el-agustino">EL AGUSTINO</a>
-                            <a class="dropdown-item" href="/lima/la-molina">LA MOLINA</a>
-                            <a class="dropdown-item" href="/lima/lurigancho-chosica">LURIGANCHO-CHOSICA</a>
-                            <a class="dropdown-item" href="/lima/san-luis">SAN LUIS</a>
-                            <a class="dropdown-item" href="/lima/santa-anita">SANTA ANITA</a>
-                            <a class="dropdown-item" href="/lima/san-juan-de-lurigancho">SAN JUAN DE LURIGANCHO</a>
+                            <a class="dropdown-item" href="/peru/lima-este/ate">ATE</a>
+                            <a class="dropdown-item" href="/peru/lima-este/cieneguilla">CIENEGUILLA</a>
+                            <a class="dropdown-item" href="/peru/lima-este/chaclacayo">CHACLACAYO</a>
+                            <a class="dropdown-item" href="/peru/lima-este/el-agustino">EL AGUSTINO</a>
+                            <a class="dropdown-item" href="/peru/lima-este/la-molina">LA MOLINA</a>
+                            <a class="dropdown-item" href="/peru/lima-este/lurigancho-chosica">LURIGANCHO-CHOSICA</a>
+                            <a class="dropdown-item" href="/peru/lima-este/san-luis">SAN LUIS</a>
+                            <a class="dropdown-item" href="/peru/lima-este/santa-anita">SANTA ANITA</a>
+                            <a class="dropdown-item" href="/peru/lima-este/san-juan-de-lurigancho">SAN JUAN DE LURIGANCHO</a>
                         </div>
                     </li>
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" id="dropdownMenuButton2" data-toggle="dropdown"
                            aria-haspopup="true" aria-expanded="false">LIMA NORTE <span class="sr-only">(current)</span></a>
                         <div class="dropdown-menu" aria-labelledby="dropdownMenuLink_1">
-                            <a class="dropdown-item" href="#">ANCÓN</a>
-                            <a class="dropdown-item" href="#">CARABAYLLO</a>
-                            <a class="dropdown-item" href="#">COMAS</a>
-                            <a class="dropdown-item" href="#">EL RÍMAC</a>
-                            <a class="dropdown-item" href="#">INDEPENDENCIA</a>
-                            <a class="dropdown-item" href="#">LOS OLIVOS</a>
-                            <a class="dropdown-item" href="#">PUENTE PIEDRA</a>
-                            <a class="dropdown-item" href="#">SAN MARTÍN DE PORRES</a>
-                            <a class="dropdown-item" href="#">SANTA ROSA</a>
+                            <a class="dropdown-item" href="/peru/lima-norte/ancon">ANCÓN</a>
+                            <a class="dropdown-item" href="/peru/lima-norte/carabayllo">CARABAYLLO</a>
+                            <a class="dropdown-item" href="/peru/lima-norte/comas">COMAS</a>
+                            <a class="dropdown-item" href="/peru/lima-norte/el-rimac">EL RÍMAC</a>
+                            <a class="dropdown-item" href="/peru/lima-norte/independencia">INDEPENDENCIA</a>
+                            <a class="dropdown-item" href="/peru/lima-norte/los-olivos">LOS OLIVOS</a>
+                            <a class="dropdown-item" href="/peru/lima-norte/puente-piedra">PUENTE PIEDRA</a>
+                            <a class="dropdown-item" href="/peru/lima-norte/san-martin-de-porres">SAN MARTÍN DE PORRES</a>
+                            <a class="dropdown-item" href="/peru/lima-norte/santa-rosa">SANTA ROSA</a>
                         </div>
                     </li>
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" id="dropdownMenuButton2" data-toggle="dropdown"
                            aria-haspopup="true" aria-expanded="false">LIMA CENTRO <span class="sr-only">(current)</span></a>
                         <div class="dropdown-menu" aria-labelledby="dropdownMenuLink_1">
-                            <a class="dropdown-item" href="#">LIMA METROPOLITANA</a>
-                            <a class="dropdown-item" href="#">BARRANCO</a>
-                            <a class="dropdown-item" href="#">BREÑA</a>
-                            <a class="dropdown-item" href="#">JESÚS MARÍA</a>
-                            <a class="dropdown-item" href="#">LA VICTORIA</a>
-                            <a class="dropdown-item" href="#">LINCE</a>
-                            <a class="dropdown-item" href="#">MAGDALENA DEL MAR</a>
-                            <a class="dropdown-item" href="#">MIRAFLORES</a>
-                            <a class="dropdown-item" href="#">PUEBLO LIBRE</a>
-                            <a class="dropdown-item" href="#">SAN BORJA</a>
-                            <a class="dropdown-item" href="#">SAN ISIDRO</a>
-                            <a class="dropdown-item" href="#">SAN MIGUEL</a>
-                            <a class="dropdown-item" href="#">SANTIAGO DE SURCO</a>
-                            <a class="dropdown-item" href="#">SURQUILLO</a>
+                            <a class="dropdown-item" href="/peru/lima-centro/lima-metropolitana">LIMA METROPOLITANA</a>
+                            <a class="dropdown-item" href="/peru/lima-centro/barranco">BARRANCO</a>
+                            <a class="dropdown-item" href="/peru/lima-centro/brena">BREÑA</a>
+                            <a class="dropdown-item" href="/peru/lima-centro/jesus-maria">JESÚS MARÍA</a>
+                            <a class="dropdown-item" href="/peru/lima-centro/la-victoria">LA VICTORIA</a>
+                            <a class="dropdown-item" href="/peru/lima-centro/lince">LINCE</a>
+                            <a class="dropdown-item" href="/peru/lima-centro/magdalena-del-mar">MAGDALENA DEL MAR</a>
+                            <a class="dropdown-item" href="/peru/lima-centro/miraflores">MIRAFLORES</a>
+                            <a class="dropdown-item" href="/peru/lima-centro/pueblo-libre">PUEBLO LIBRE</a>
+                            <a class="dropdown-item" href="/peru/lima-centro/san-borja">SAN BORJA</a>
+                            <a class="dropdown-item" href="/peru/lima-centro/san-isidro">SAN ISIDRO</a>
+                            <a class="dropdown-item" href="/peru/lima-centro/san-miguel">SAN MIGUEL</a>
+                            <a class="dropdown-item" href="/peru/lima-centro/santiago-de-surco">SANTIAGO DE SURCO</a>
+                            <a class="dropdown-item" href="/peru/lima-centro/surquillo">SURQUILLO</a>
                         </div>
                     </li>
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" id="dropdownMenuButton2" data-toggle="dropdown"
                            aria-haspopup="true" aria-expanded="false">LIMA SUR <span class="sr-only">(current)</span></a>
                         <div class="dropdown-menu" aria-labelledby="dropdownMenuLink_1">
-                            <a class="dropdown-item" href="#">CHORRILLOS</a>
-                            <a class="dropdown-item" href="#">LURÍN</a>
-                            <a class="dropdown-item" href="#">PACHACAMAC</a>
-                            <a class="dropdown-item" href="#">PUCUSANA</a>
-                            <a class="dropdown-item" href="#">PUNTA HERMOSA</a>
-                            <a class="dropdown-item" href="#">PUNTA NEGRA</a>
-                            <a class="dropdown-item" href="#">SAN BARTOLO</a>
-                            <a class="dropdown-item" href="#">SAN JUAN DE MIRAFLORES</a>
-                            <a class="dropdown-item" href="#">SANTA MARÍA DEL MAR</a>
-                            <a class="dropdown-item" href="#">VILLA EL SALVADOR</a>
-                            <a class="dropdown-item" href="#">VILLA MARÍA DEL TRIUNFO</a>
+                            <a class="dropdown-item" href="/peru/lima-sur/chorrillos">CHORRILLOS</a>
+                            <a class="dropdown-item" href="/peru/lima-sur/lurin">LURÍN</a>
+                            <a class="dropdown-item" href="/peru/lima-sur/pachacamac">PACHACAMAC</a>
+                            <a class="dropdown-item" href="/peru/lima-sur/pucusana">PUCUSANA</a>
+                            <a class="dropdown-item" href="/peru/lima-sur/punta-hermosa">PUNTA HERMOSA</a>
+                            <a class="dropdown-item" href="/peru/lima-sur/punta-negra">PUNTA NEGRA</a>
+                            <a class="dropdown-item" href="/peru/lima-sur/san-bartolo">SAN BARTOLO</a>
+                            <a class="dropdown-item" href="/peru/lima-sur/san-juan-de-miraflores">SAN JUAN DE MIRAFLORES</a>
+                            <a class="dropdown-item" href="/peru/lima-sur/santa-maria-del-mar">SANTA MARÍA DEL MAR</a>
+                            <a class="dropdown-item" href="/peru/lima-sur/villar-el-salvador">VILLA EL SALVADOR</a>
+                            <a class="dropdown-item" href="/peru/lima-sur/villa-maria-del-triunfo">VILLA MARÍA DEL TRIUNFO</a>
 
                         </div>
                     </li>
@@ -154,14 +147,14 @@
                         <a class="nav-link dropdown-toggle" href="#" id="dropdownMenuButton2" data-toggle="dropdown"
                            aria-haspopup="true" aria-expanded="false">CALLAO <span class="sr-only">(current)</span></a>
                         <div class="dropdown-menu" aria-labelledby="dropdownMenuLink_1">
-                            <a class="dropdown-item" href="#">REGIÓN CALLAO</a>
-                            <a class="dropdown-item" href="#">CALLAO DISTRITO</a>
-                            <a class="dropdown-item" href="#">BELLAVISTA</a>
-                            <a class="dropdown-item" href="#">CARMEN DE LA LEGUA</a>
-                            <a class="dropdown-item" href="#">LA PERLA</a>
-                            <a class="dropdown-item" href="#">LA PUNTA</a>
-                            <a class="dropdown-item" href="#">MI PERÚ</a>
-                            <a class="dropdown-item" href="#">VENTANILLA</a>
+                            <a class="dropdown-item" href="/peru/callao/region-callao">REGIÓN CALLAO</a>
+                            <a class="dropdown-item" href="/peru/callao/callao-distrito">CALLAO DISTRITO</a>
+                            <a class="dropdown-item" href="/callao/bellavista">BELLAVISTA</a>
+                            <a class="dropdown-item" href="/peru/callao/carmen-de-la-legua">CARMEN DE LA LEGUA</a>
+                            <a class="dropdown-item" href="/peru/callao/la-perla">LA PERLA</a>
+                            <a class="dropdown-item" href="/peru/callao/la-punta">LA PUNTA</a>
+                            <a class="dropdown-item" href="/peru/callao/mi-peru">MI PERÚ</a>
+                            <a class="dropdown-item" href="/peru/callao/ventanilla">VENTANILLA</a>
 
                         </div>
                     </li>
@@ -178,9 +171,9 @@
             <div class="col-12 col-md-6 py-4 Reserved"> © Copyright 2018, All rights reserved. Design by <a href="#" title="Free HTML5 Bootstrap templates">FreeHTML5.co</a>. </div>
             <div class="col-12 col-md-6 spdp_right py-4">
                 <a href="#" class="footer_last_part_menu">Home</a>
-                <a href="Contact_us.html" class="footer_last_part_menu">About</a>
-                <a href="Contact_us.html" class="footer_last_part_menu">Contact</a>
-                <a href="blog.html" class="footer_last_part_menu">Latest News</a></div>
+                <a href="#" class="footer_last_part_menu">About</a>
+                <a href="#" class="footer_last_part_menu">Contact</a>
+                <a href="#" class="footer_last_part_menu">Latest News</a></div>
         </div>
     </div>
 </div>

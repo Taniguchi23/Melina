@@ -11,4 +11,7 @@ class Distrito extends Model
     public  function candidatos (){
         return $this->hasMany(Candidato::class);
     }
+    public function region (){
+        return $this->belongsTo(Region::class);
+    }
 }

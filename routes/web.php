@@ -12,8 +12,8 @@ use App\Http\Controllers\ApiController;
 
 //web
 Route::get('/',[WebController::class,'index']);
-Route::get('/lima/{distrito}',[WebController::class,'eventos']);
-Route::get('/lima/{distrito}/{fecha}',[WebController::class,'detalle']);
+Route::get('/peru/{region}/{distrito}',[WebController::class,'eventos']);
+Route::get('/peru/{region}/{distrito}/{fecha}',[WebController::class,'detalle']);
 
 Route::get('/api/lista/{id}',[ApiController::class, 'lista_candidato'])->name('api.lista');;
 Route::post('/api/votacion',[ApiController::class,'votacion'])->withoutMiddleware([\App\Http\Middleware\VerifyCsrfToken::class]);

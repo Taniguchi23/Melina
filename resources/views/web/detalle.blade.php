@@ -1,28 +1,15 @@
 @extends('layouts.app')
 @section('content')
 
-
-
-
     <div id="fh5co-single-content" class="container-fluid pb-4 pt-4 paddding">
         <div class="container paddding">
             <div class="row mx-0">
                 <div class="col-md-8 animate-box" data-animate-effect="fadeInLeft">
-                    <h3>{{$distrito->nombre}} : ENCUESTA VIRTUAL </h3>
-                    <p>
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla malesuada enim id enim congue
-                        convallis. Praesent a cursus orci. Proin mauris eros, rhoncus in risus nec, vestibulum dignissim
-                        diam. Duis dapibus, magna ac fringilla consectetur, tellus quam aliquam quam, molestie tincidunt
-                        justo risus et nunc. Donec quis justo nec diam hendrerit facilisis placerat non magna. Class aptent
-                        taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.
-                    </p>
+                    <h3>{{$distrito->nombre}} : Encuesta Virtual </h3>
+                    <img src="{{Storage::url($evento->imagen)}}" alt="img" width="700px">
+                    <h5>{{$evento->created_at}}</h5>
+                   {{$evento->contenido}}
 
-                    <ul>
-                        <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Numquam, modi!</li>
-                        <li>Ea iure at, debitis culpa perspiciatis suscipit laudantium a, expedita.</li>
-                        <li>Voluptate distinctio perspiciatis cum sed ipsum nisi accusantium a aut!</li>
-                        <li>Sed vel quo dignissimos, quaerat totam officia, deserunt provident minus.</li>
-                    </ul>
 
 
 
@@ -54,57 +41,25 @@
                     </div>
                     <div class="clearfix"></div>
                     <div class="fh5co_tags_all">
-                        <a href="#" class="fh5co_tagg">Business</a>
-                        <a href="#" class="fh5co_tagg">Technology</a>
-                        <a href="#" class="fh5co_tagg">Sport</a>
-                        <a href="#" class="fh5co_tagg">Art</a>
-                        <a href="#" class="fh5co_tagg">Lifestyle</a>
-                        <a href="#" class="fh5co_tagg">Three</a>
-                        <a href="#" class="fh5co_tagg">Photography</a>
-                        <a href="#" class="fh5co_tagg">Lifestyle</a>
-                        <a href="#" class="fh5co_tagg">Art</a>
-                        <a href="#" class="fh5co_tagg">Education</a>
-                        <a href="#" class="fh5co_tagg">Social</a>
-                        <a href="#" class="fh5co_tagg">Three</a>
+                        @foreach($distritos as $d)
+                            <a href="/peru/{{$d->region->url_seo}}/{{$d->url_seo}}" class="fh5co_tagg">{{$d->nombre}}</a>
+                        @endforeach
                     </div>
                     <div>
                         <div class="fh5co_heading fh5co_heading_border_bottom pt-3 py-2 mb-4">Most Popular</div>
                     </div>
-                    <div class="row pb-3">
-                        <div class="col-5 align-self-center">
-                            <img src="images/download (1).jpg" alt="img" class="fh5co_most_trading"/>
+                    @foreach($e as $eve)
+                        <div class="row pb-3">
+                            <div class="col-5 align-self-center">
+                                <img src="{{Storage::url($eve->imagen)}}" alt="img" class="fh5co_most_trading"/>
+                            </div>
+                            <div class="col-7 paddding">
+                                <div class="most_fh5co_treding_font"> {{$eve->contenido}}</div>
+                                <a href="/peru/{{$distrito->region->url_seo}}/{{$eve->slug}}/{{$eve->fecha}}"><div class="most_fh5co_treding_font_123">{{$eve->created_at}}</div></a>
+                            </div>
                         </div>
-                        <div class="col-7 paddding">
-                            <div class="most_fh5co_treding_font"> Magna aliqua ut enim ad minim veniam quis nostrud.</div>
-                            <div class="most_fh5co_treding_font_123"> April 18, 2016</div>
-                        </div>
-                    </div>
-                    <div class="row pb-3">
-                        <div class="col-5 align-self-center">
-                            <img src="images/allef-vinicius-108153.jpg" alt="img" class="fh5co_most_trading"/>
-                        </div>
-                        <div class="col-7 paddding">
-                            <div class="most_fh5co_treding_font"> Enim ad minim veniam nostrud xercitation ullamco.</div>
-                            <div class="most_fh5co_treding_font_123"> April 18, 2016</div>
-                        </div>
-                    </div>
-                    <div class="row pb-3">
-                        <div class="col-5 align-self-center">
-                            <img src="images/download (2).jpg" alt="img" class="fh5co_most_trading"/>
-                        </div>
-                        <div class="col-7 paddding">
-                            <div class="most_fh5co_treding_font"> Magna aliqua ut enim ad minim veniam quis nostrud.</div>
-                            <div class="most_fh5co_treding_font_123"> April 18, 2016</div>
-                        </div>
-                    </div>
-                    <div class="row pb-3">
-                        <div class="col-5 align-self-center"><img src="images/seth-doyle-133175.jpg" alt="img"
-                                                                  class="fh5co_most_trading"/></div>
-                        <div class="col-7 paddding">
-                            <div class="most_fh5co_treding_font"> Magna aliqua ut enim ad minim veniam quis nostrud.</div>
-                            <div class="most_fh5co_treding_font_123"> April 18, 2016</div>
-                        </div>
-                    </div>
+                    @endforeach
+
                 </div>
             </div>
         </div>

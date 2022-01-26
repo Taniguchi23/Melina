@@ -12,13 +12,13 @@
                         <div class="row pb-4">
                             <div class="col-md-5">
                                 <div class="fh5co_hover_news_img">
-                                    <div class="fh5co_news_img"><img src="images/nathan-mcbride-229637.jpg" alt=""/></div>
+                                    <div class="fh5co_news_img"><img src="{{Storage::url($evento->imagen)}}" alt=""/></div>
                                     <div></div>
                                 </div>
                             </div>
                             <div class="col-md-7 animate-box">
-                                <a href="/lima/{{$evento->slug}}/{{$evento->fecha}}" class="fh5co_magna py-2"> {{$evento->titulo}}  </a>
-                                <a href="/lima/{{$evento->slug}}/{{$evento->fecha}}" class="fh5co_mini_time py-3"> Encuesta -
+                                <a href="/peru/{{$distrito->region->url_seo}}/{{$evento->slug}}/{{$evento->fecha}}" class="fh5co_magna py-2"> {{$evento->titulo}}  </a>
+                                <a href="/peru/{{$distrito->region->url_seo}}/{{$evento->slug}}/{{$evento->fecha}}" class="fh5co_mini_time py-3"> Encuesta -
                                     April 18,2016 </a>
                                 <div class="fh5co_consectetur"> {{$evento->contenido}}
                                 </div>
@@ -34,57 +34,25 @@
                     </div>
                     <div class="clearfix"></div>
                     <div class="fh5co_tags_all">
-                        <a href="#" class="fh5co_tagg">Business</a>
-                        <a href="#" class="fh5co_tagg">Technology</a>
-                        <a href="#" class="fh5co_tagg">Sport</a>
-                        <a href="#" class="fh5co_tagg">Art</a>
-                        <a href="#" class="fh5co_tagg">Lifestyle</a>
-                        <a href="#" class="fh5co_tagg">Three</a>
-                        <a href="#" class="fh5co_tagg">Photography</a>
-                        <a href="#" class="fh5co_tagg">Lifestyle</a>
-                        <a href="#" class="fh5co_tagg">Art</a>
-                        <a href="#" class="fh5co_tagg">Education</a>
-                        <a href="#" class="fh5co_tagg">Social</a>
-                        <a href="#" class="fh5co_tagg">Three</a>
+                        @foreach($distritos as $d)
+                        <a href="/peru/{{$d->region->url_seo}}/{{$d->url_seo}}" class="fh5co_tagg">{{$d->nombre}}</a>
+                        @endforeach
                     </div>
                     <div>
                         <div class="fh5co_heading fh5co_heading_border_bottom pt-3 py-2 mb-4">Most Popular</div>
                     </div>
-                    <div class="row pb-3">
-                        <div class="col-5 align-self-center">
-                            <img src="images/download (1).jpg" alt="img" class="fh5co_most_trading"/>
+                    @foreach($e as $eve)
+                        <div class="row pb-3">
+                            <div class="col-5 align-self-center">
+                                <img src="{{Storage::url($eve->imagen)}}" alt="img" class="fh5co_most_trading"/>
+                            </div>
+                            <div class="col-7 paddding">
+                                <div class="most_fh5co_treding_font"> {{$eve->contenido}}</div>
+                                <a href="/peru/{{$distrito->region->url_seo}}/{{$eve->slug}}/{{$eve->fecha}}"><div class="most_fh5co_treding_font_123">{{$eve->created_at}}</div></a>
+                            </div>
                         </div>
-                        <div class="col-7 paddding">
-                            <div class="most_fh5co_treding_font"> Magna aliqua ut enim ad minim veniam quis nostrud.</div>
-                            <div class="most_fh5co_treding_font_123"> April 18, 2016</div>
-                        </div>
-                    </div>
-                    <div class="row pb-3">
-                        <div class="col-5 align-self-center">
-                            <img src="images/allef-vinicius-108153.jpg" alt="img" class="fh5co_most_trading"/>
-                        </div>
-                        <div class="col-7 paddding">
-                            <div class="most_fh5co_treding_font"> Enim ad minim veniam nostrud xercitation ullamco.</div>
-                            <div class="most_fh5co_treding_font_123"> April 18, 2016</div>
-                        </div>
-                    </div>
-                    <div class="row pb-3">
-                        <div class="col-5 align-self-center">
-                            <img src="images/download (2).jpg" alt="img" class="fh5co_most_trading"/>
-                        </div>
-                        <div class="col-7 paddding">
-                            <div class="most_fh5co_treding_font"> Magna aliqua ut enim ad minim veniam quis nostrud.</div>
-                            <div class="most_fh5co_treding_font_123"> April 18, 2016</div>
-                        </div>
-                    </div>
-                    <div class="row pb-3">
-                        <div class="col-5 align-self-center"><img src="images/seth-doyle-133175.jpg" alt="img"
-                                                                  class="fh5co_most_trading"/></div>
-                        <div class="col-7 paddding">
-                            <div class="most_fh5co_treding_font"> Magna aliqua ut enim ad minim veniam quis nostrud.</div>
-                            <div class="most_fh5co_treding_font_123"> April 18, 2016</div>
-                        </div>
-                    </div>
+                    @endforeach
+
                 </div>
             </div>
             <div class="row mx-0">
