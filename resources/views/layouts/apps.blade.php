@@ -92,7 +92,7 @@
                          with font-awesome or any other icon font library -->
 
                     <li class="nav-item has-treeview">
-                        <a href="{{route('home')}}" class="nav-link">
+                        <a href="{{route('evento.index')}}" class="nav-link">
                             <i class="nav-icon fas fa-copy"></i>
                             <p>
                                 Eventos
@@ -101,46 +101,30 @@
                         </a>
                         <ul class="nav nav-treeview">
                             <li class="nav-item">
-                                <a href="{{route('home')}}" class="nav-link">
+                                <a href="{{route('evento.index')}}" class="nav-link">
                                     <i class="far fa-circle nav-icon"></i>
                                     <p>Lista de Eventos</p>
                                 </a>
                             </li>
-                            <li class="nav-item">
-                                <a href="#" class="nav-link">
-                                    <i class="far fa-circle nav-icon"></i>
-                                    <p>Crear Eventos</p>
-                                </a>
-                            </li>
+
                         </ul>
                     </li>
                     <li class="nav-item has-treeview">
-                        <a href="#" class="nav-link">
+                        <a href="{{route('candidato.index')}}" class="nav-link">
                             <i class="nav-icon fas fa-chart-pie"></i>
                             <p>
-                                Usuarios
+                                Candidatos
                                 <i class="right fas fa-angle-left"></i>
                             </p>
                         </a>
                         <ul class="nav nav-treeview">
                             <li class="nav-item">
-                                <a href="#" class="nav-link">
+                                <a href="{{route('candidato.index')}}" class="nav-link">
                                     <i class="far fa-circle nav-icon"></i>
-                                    <p>Lista de Usuarios</p>
+                                    <p>Lista de Candidatos</p>
                                 </a>
                             </li>
-                            <li class="nav-item">
-                                <a href="#" class="nav-link">
-                                    <i class="far fa-circle nav-icon"></i>
-                                    <p>Nuevo Usuario</p>
-                                </a>
-                            </li>
-                            <li class="nav-item">
-                                <a href="#" class="nav-link">
-                                    <i class="far fa-circle nav-icon"></i>
-                                    <p>Usuarios</p>
-                                </a>
-                            </li>
+
                         </ul>
                     </li>
                     <li class="nav-item has-treeview">

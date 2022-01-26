@@ -8,4 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class Distrito extends Model
 {
     use HasFactory;
+    public  function candidatos (){
+        return $this->hasMany(Candidato::class);
+    }
 }

@@ -8,4 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class Partido extends Model
 {
     use HasFactory;
+    public  function candidatos (){
+        return $this->hasMany(Candidato::class);
+    }
 }

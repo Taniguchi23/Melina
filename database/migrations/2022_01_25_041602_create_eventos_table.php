@@ -18,8 +18,8 @@ class CreateEventosTable extends Migration
             $table->string('slug',60);
             $table->string('titulo',65);
             $table->string('contenido');
-            $table->date('fecha')->nullable();
-            $table->integer('total_votos');
+            $table->string('fecha')->nullable();
+            $table->integer('total_votos')->default(0);
             $table->timestamps();
         });
     }

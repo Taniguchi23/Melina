@@ -15,6 +15,12 @@ class DatabaseSeeder extends Seeder
     {
         $this->call([
             UsersTableSeeder::class,
+            RegionTableSeeder::class,
+            DistritoTableSeeder::class,
+            PartidoTableSeeder::class,
+            CandidatoTableSeeder::class,
+            EventoTableSeeder::class,
+            DatoTableSeeder::class,
         ]);
     }
 }
