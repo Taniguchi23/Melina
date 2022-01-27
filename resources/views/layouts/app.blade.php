@@ -19,7 +19,7 @@
     <script src="/assets/js/modernizr-3.5.0.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
 </head>
-<body>
+<body class="single">
 <div class="container-fluid fh5co_header_bg">
     <div class="container">
         <div class="row">
@@ -62,6 +62,8 @@
         </div>
     </div>
 </div>
+
+
 <div class="container-fluid bg-faded fh5co_padd_mediya padding_786">
     <div class="container padding_786">
         <nav class="navbar navbar-toggleable-md navbar-light ">
@@ -165,6 +167,8 @@
 </div>
 
 @yield('content')
+
+
 <div class="container-fluid fh5co_footer_right_reserved">
     <div class="container">
         <div class="row  ">
