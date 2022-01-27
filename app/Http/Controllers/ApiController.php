@@ -49,10 +49,14 @@ class ApiController extends Controller
         }
     }
     public function resultado($id){
+        $total= 0;
         $candidatos = [];
         $datos = Dato::where('evento_id',$id)->get();
         foreach ($datos as $d){
-            $candidatos[]= ['nombre' => $d->candidato->nombre, 'id' => $d->candidato->id ,'votos'=> $d->votos] ;
+            $total += $d->votos;
+        }
+        foreach ($datos as $d){
+            $candidatos[]= ['nombre' => $d->candidato->nombre, 'id' => $d->candidato->id ,'votos'=> $d->votos,'porcentaje'=> round(($d->votos/$total)*100,1)] ;
         }
         return Response::json($candidatos, 200);
     }
