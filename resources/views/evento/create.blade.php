@@ -40,18 +40,17 @@
                                     <div class="form-group">
                                         <input type="text" class="form-control" name="slug" placeholder="Slug: Url Seo" required>
                                     </div>
-
-
                                     <div class="form-group">
-                    <textarea type="text" id="compose-textarea" class="form-control" name="contenido" style="height: 300px" required>
-
-                    </textarea>
+                                        <input type="text" class="form-control" name="contenido" placeholder="Contenido del Evento" required>
                                     </div>
                                     <div class="form-group">
                                         <input type="text" class="form-control" name="descripcion" placeholder="Pequeña descripcion" required>
                                     </div>
                                     <div class="form-group">
                                         <input type="text" class="form-control" name="fecha" placeholder="Fecha seo: enero-2022" required>
+                                    </div>
+                                    <div class="form-group">
+                                        <input type="text" class="form-control" name="imagen" placeholder="Imagen"  >
                                     </div>
 
                                 </div>

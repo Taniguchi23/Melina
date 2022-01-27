@@ -14,10 +14,24 @@ class CandidatoController extends Controller
         return view('candidato.index', compact('candidatos'));
     }
     public function create(){
-
+        $datos = [
+            'distritos' => Distrito::all(),
+            'partidos' => Partido::all(),
+        ];
+          return view('candidato.create',$datos);
     }
     public function store(Request $request){
+        $candidato = new Candidato;
+        $candidato->nombre = $request->nombre;
+        $candidato->distrito_id = $request->distrito_id;
+        $candidato->partido_id = $request->partido_id;
 
+        if (isset($request->imagen)){
+            $candidato->imagen = $request->file('imagen')->store('public/candidatos');
+        }
+
+        $candidato->save();
+        return redirect()->route('candidato.index');
     }
     public function edit($id){
         $datos = [
@@ -32,6 +46,14 @@ class CandidatoController extends Controller
         $candidato->nombre = $request->nombre;
         $candidato->distrito_id = $request->distrito_id;
         $candidato->partido_id = $request->partido_id;
+        if(isset($request->imagen)){
+            if($candidato->imagen==null){
+                $candidato->imagen=$request->file('imagen')->store('public/candidatos');
+            }else{
+                Storage::delete($candidato->imagen);
+                $candidato->imagen=$request->file('imagen')->store('public/candidatos');
+            }
+        }
         $candidato->save();
         return redirect()->route('candidato.index');
 

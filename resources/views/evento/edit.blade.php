@@ -40,18 +40,18 @@
                                     <div class="form-group">
                                         <input type="text" class="form-control" name="slug" value="{{$evento->slug}}" required>
                                     </div>
-
-
                                     <div class="form-group">
-                    <textarea type="text" id="compose-textarea" class="form-control" name="contenido" style="height: 300px" required> {{$evento->contenido}}
-
-                    </textarea>
+                                        <input type="text" class="form-control" name="contenido" value="{{$evento->contenido}}" required>
                                     </div>
                                     <div class="form-group">
                                         <input type="text" class="form-control" name="descripcion" value="{{$evento->descripcion}}" required>
                                     </div>
                                     <div class="form-group">
                                         <input type="text" class="form-control" name="fecha" value="{{$evento->fecha}}" required>
+                                    </div>
+                                    <div class="form-group">
+                                        <img src="{{Storage::url($evento->imagen)}}" alt="" style="width: 200px">
+                                        <input type="text" class="form-control" name="imagen"  value="{{$imagen}}">
                                     </div>
 
                                 </div>
