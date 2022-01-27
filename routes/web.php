@@ -8,6 +8,7 @@ use App\Http\Controllers\DistritoController;
 use App\Http\Controllers\CandidatoController;
 use App\Http\Controllers\EventoController;
 use App\Http\Controllers\ApiController;
+use App\Http\Controllers\PartidoController;
 
 
 //web
@@ -55,6 +56,15 @@ Route::group(['middleware'=> 'auth'], function (){
     Route::post('/eventos/actualizar/{id}',[EventoController::class,'update'])->name('evento.update');
     Route::get('/eventos/{id}',[EventoController::class,'delete'])->name('evento.delete');
 
+    //partidos
+    Route::controller(PartidoController::class)->group(function (){
+        Route::get('/partidos','index')->name('partido.index');
+        Route::get('/partidos/crear','create')->name('partido.create');
+        Route::post('/partidos/guardar','store')->name('partido.store');
+        Route::get('partidos/editar/{id}','edit')->name('partido.edit');
+        Route::post('/partidos/actualizar/{id}','update')->name('partido.update');
+        Route::get('/partidos/{id}','delete')->name('partido.delete');
+    });
 });
 
 

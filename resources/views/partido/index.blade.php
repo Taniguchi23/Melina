@@ -11,7 +11,7 @@
                     <div class="col-sm-6">
                         <ol class="breadcrumb float-sm-right">
                             <li class="breadcrumb-item"><a href="{{route('home')}}">Inicio</a></li>
-                            <li class="breadcrumb-item active">Lista de Candidatos</li>
+                            <li class="breadcrumb-item active">Lista de Partidos Políticos</li>
                         </ol>
                     </div>
                 </div>
@@ -19,7 +19,7 @@
         </section>
         <div class="row p-3">
             <div class="col-12">
-                <a class="btn btn-success float-right" href="{{route('candidato.create')}}">Nuevo Candidato</a>
+                <a class="btn btn-success float-right" href="{{route('partido.create')}}">Nuevos Partidos</a>
             </div>
         </div>
         <!-- Main content -->
@@ -30,7 +30,7 @@
                     <!-- /.card -->
                     <div class="card card-info">
                         <div class="card-header">
-                            <h3 class="card-title">Candidatos</h3>
+                            <h3 class="card-title">Partidos</h3>
 
                             <div class="card-tools">
                                 <button type="button" class="btn btn-tool" data-card-widget="collapse" data-toggle="tooltip" title="Collapse">
@@ -45,25 +45,23 @@
                                         #
                                     </th>
                                     <th>Nombres</th>
-                                    <th>Distrito</th>
-                                    <th>Partido Político</th>
+                                    <th>Siglas</th>
                                     <th>Foto</th>
 
                                     <th class="text-center"></th>
                                 </tr>
                                 </thead>
                                 <tbody>
-                                @foreach($candidatos as $candidato)
+                                @foreach($partidos as $partido)
                                     <tr>
-                                        <td>{{$candidato->id}}</td>
-                                        <td>{{$candidato->nombre}}</td>
-                                        <td>{{$candidato->distrito->nombre}}</td>
-                                        <td>{{$candidato->partido->siglas}}</td>
-                                        <td><img style="width: 120px" src="{{Storage::url($candidato->imagen)}}" alt=""></td>
+                                        <td>{{$partido->id}}</td>
+                                        <td>{{$partido->nombre}}</td>
+                                        <td>{{$partido->siglas}}</td>
+                                        <td><img style="width: 120px" src="{{Storage::url($partido->imagen)}}" alt=""></td>
                                         <td class="text-right py-0 align-middle">
                                             <div class="btn-group btn-group-sm">
-                                                <a href="{{route('candidato.edit',$candidato->id)}}" class="btn btn-info"><i class="fas fa-edit"></i></a>
-                                                <a href="{{route('candidato.delete',$candidato->id)}}" class="btn btn-danger" onclick="return confirm('¿Está seguro de eliminar este registro?')"><i class="fas fa-trash" ></i></a>
+                                                <a href="{{route('partido.edit',$partido->id)}}" class="btn btn-info"><i class="fas fa-edit"></i></a>
+                                                <a href="{{route('partido.delete',$partido->id)}}" class="btn btn-danger" onclick="return confirm('¿Está seguro de eliminar este registro?')"><i class="fas fa-trash" ></i></a>
                                             </div>
                                         </td>
                                 @endforeach

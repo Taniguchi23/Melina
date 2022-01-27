@@ -127,6 +127,7 @@
 
                         </ul>
                     </li>
+
                     <li class="nav-item has-treeview">
                         <a href="{{route('region.index')}}" class="nav-link">
                             <i class="nav-icon fas fa-table"></i>
@@ -159,6 +160,24 @@
                                     <p>Lista de distritos</p>
                                 </a>
                             </li>
+                        </ul>
+                    </li>
+                    <li class="nav-item has-treeview">
+                        <a href="{{route('partido.index')}}" class="nav-link">
+                            <i class="nav-icon fas fa-chart-pie"></i>
+                            <p>
+                                Partidos Políticos
+                                <i class="right fas fa-angle-left"></i>
+                            </p>
+                        </a>
+                        <ul class="nav nav-treeview">
+                            <li class="nav-item">
+                                <a href="{{route('partido.index')}}" class="nav-link">
+                                    <i class="far fa-circle nav-icon"></i>
+                                    <p>Lista de Partidos</p>
+                                </a>
+                            </li>
+
                         </ul>
                     </li>
                 </ul>

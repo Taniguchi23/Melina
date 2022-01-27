@@ -50,11 +50,14 @@
                             <th style="width: 10%">
                                 Slug
                             </th>
-                            <th style="width: 30%">
+                            <th style="width: 10%">
                                Contenido
                             </th>
                             <th>
                                 Fecha
+                            </th>
+                            <th>
+                                Foto
                             </th>
                             <th style="width: 8%" class="text-center">
                                 Votos
@@ -80,6 +83,9 @@
                                 </td>
                                 <td>
                                     {{$evento->fecha}}
+                                </td>
+                                <td>
+                                    <img src="{{Storage::url($evento->imagen)}}" alt="" style="width: 50px">
                                 </td>
                                 <td class="project-state">
                                     <span class="badge badge-success">{{$evento->total_votos}}</span>
