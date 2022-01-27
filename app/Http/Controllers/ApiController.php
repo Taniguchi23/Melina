@@ -52,7 +52,7 @@ class ApiController extends Controller
         $candidatos = [];
         $datos = Dato::where('evento_id',$id)->get();
         foreach ($datos as $d){
-            $candidatos[]= ['nombre' => $d->candidato->nombre, 'id' => $d->candidato->id ,'votos'=> $d->candidato->votos] ;
+            $candidatos[]= ['nombre' => $d->candidato->nombre, 'id' => $d->candidato->id ,'votos'=> $d->votos] ;
         }
         return Response::json($candidatos, 200);
     }

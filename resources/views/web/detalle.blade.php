@@ -31,76 +31,63 @@
 
 
                             {{-- <div class="col-12 lista-candidatos">
-                                
+
                              </div> --}}
 
 
 
                             <table class="table table-image table-candidato">
-                                <tbody>
-                                    <tr>
-                                        <td class="w-10"><input type="radio" class="option-input radio" name="votar" /></td>
-                                        <td>Aly Carlos Villarroel</td>
-                                        <td class="w-80"><img
-                                                src="https://i.pinimg.com/originals/c5/f5/b0/c5f5b093d6147305ab51eafa3bbd597c.jpg"
-                                                class="img-candidato" alt="Sheep"></td>
-                                        <td class="w-80"><img
-                                                src="https://upload.wikimedia.org/wikipedia/commons/3/3c/Alianza_para_el_Progreso_Peru.svg"
-                                                class="img-candidato" alt="Sheep"></td>
-                                    </tr>
-                                    <tr>
-                                        <td class="w-10"><input type="radio" name="votar" checked></td>
-                                        <td>Erasmo Cárdenas Obregón</td>
-                                        <td class="w-80"><img
-                                                src="https://i.pinimg.com/originals/c5/f5/b0/c5f5b093d6147305ab51eafa3bbd597c.jpg"
-                                                class="img-candidato" alt="Sheep"></td>
-                                        <td class="w-80"><img
-                                                src="https://upload.wikimedia.org/wikipedia/commons/c/c0/Logo_Oficial_PPC.png"
-                                                class="img-candidato" alt="Sheep"></td>
-                                    </tr>
+                                <tbody class="lista-candidatos">
+
+                                </tbody>
+                            </table>
+
+
+                            <table class="table table-image table-candidato">
+                                <tbody class="lista-candidatos-resultado">
+
                                 </tbody>
                             </table>
 
 
                             <table class="table table-image table-candidato">
                                 <tbody>
-                                    <tr>
-                                        <td class="name-votos">Aly Carlos Villarroel</td>
-                                        <td class="w-80"><img
-                                                src="https://i.pinimg.com/originals/c5/f5/b0/c5f5b093d6147305ab51eafa3bbd597c.jpg"
-                                                class="img-candidato" alt="Sheep"></td>
-                                        <td class="w-80"><img
-                                                src="https://upload.wikimedia.org/wikipedia/commons/3/3c/Alianza_para_el_Progreso_Peru.svg"
-                                                class="img-candidato" alt="Sheep"></td>
-                                        <td>
-                                            <div class="progress-element progress-element--html">
-                                                <p class="progress-label">HTML</p>
-                                                <div class="progress-container">
-                                                    <progress max="100" value="95">95%</progress>
-                                                </div>
+                                <tr>
+                                    <td class="name-votos">Aly Carlos Villarroel</td>
+                                    <td class="w-80"><img
+                                            src="https://i.pinimg.com/originals/c5/f5/b0/c5f5b093d6147305ab51eafa3bbd597c.jpg"
+                                            class="img-candidato" alt="Sheep"></td>
+                                    <td class="w-80"><img
+                                            src="https://upload.wikimedia.org/wikipedia/commons/3/3c/Alianza_para_el_Progreso_Peru.svg"
+                                            class="img-candidato" alt="Sheep"></td>
+                                    <td>
+                                        <div class="progress-element progress-element--html">
+                                            <p class="progress-label">HTML</p>
+                                            <div class="progress-container">
+                                                <progress max="100" value="90">10%</progress>
                                             </div>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td class="name-votos">Erasmo Cárdenas Obregón</td>
-                                        <td class="w-80"><img
-                                                src="https://i.pinimg.com/originals/c5/f5/b0/c5f5b093d6147305ab51eafa3bbd597c.jpg"
-                                                class="img-candidato" alt="Sheep"></td>
-                                        <td class="w-80"><img
-                                                src="https://upload.wikimedia.org/wikipedia/commons/c/c0/Logo_Oficial_PPC.png"
-                                                class="img-candidato" alt="Sheep"></td>
-                                        <td>
-                                            <div class="progress-element progress-element--html">
-                                                <p class="progress-label">HTML</p>
-                                                <div class="progress-container">
-                                                    <progress max="100" value="95">95%</progress>
-                                                </div>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="name-votos">Erasmo Cárdenas Obregón</td>
+                                    <td class="w-80"><img
+                                            src="https://i.pinimg.com/originals/c5/f5/b0/c5f5b093d6147305ab51eafa3bbd597c.jpg"
+                                            class="img-candidato" alt="Sheep"></td>
+                                    <td class="w-80"><img
+                                            src="https://upload.wikimedia.org/wikipedia/commons/c/c0/Logo_Oficial_PPC.png"
+                                            class="img-candidato" alt="Sheep"></td>
+                                    <td>
+                                        <div class="progress-element progress-element--html">
+                                            <p class="progress-label">HTML</p>
+                                            <div class="progress-container">
+                                                <progress max="100" value="95">95%</progress>
                                             </div>
-                                        </td>
-                                    </tr>
+                                        </div>
+                                    </td>
+                                </tr>
                                 </tbody>
                             </table>
-
 
                             <div class="col-12 lista-votos">
                                 resultado de votos
@@ -366,9 +353,22 @@
         $.get("{{ url('/api/lista/' . $evento->id) }}", function(data, status) {
             for (var it of data) {
                 var item =
-                    '<div class="form-check"> <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1"> <label class="form-check-label" for="flexRadioDefault1">' +
-                    it.nombre + '</label></div>';
+                    '<tr><td class="w-10"><input type="radio" class="option-input radio" name="votar" /></td><td>'+ it.nombre +'</td>'+
+                    '<td class="w-80"><img src="https://i.pinimg.com/originals/c5/f5/b0/c5f5b093d6147305ab51eafa3bbd597c.jpg" class="img-candidato" alt="Sheep"></td>'+
+                    '<td class="w-80"><img src="https://upload.wikimedia.org/wikipedia/commons/3/3c/Alianza_para_el_Progreso_Peru.svg" class="img-candidato" alt="Sheep"></td> </tr>';
                 $('.lista-candidatos').append(item)
+            }
+        });
+
+        $.get("{{url('/api/resultados/'.$evento->id)}}",function (data,status){
+            for (var it of data){
+                var item =
+                    '<tr ><td class="name-votos">'+it.nombre+'</td><td class="w-80">'+
+                    '<img src="https://i.pinimg.com/originals/c5/f5/b0/c5f5b093d6147305ab51eafa3bbd597c.jpg" class="img-candidato" alt="Sheep"></td>'+
+                    '<td class="w-80"><img src="https://upload.wikimedia.org/wikipedia/commons/3/3c/Alianza_para_el_Progreso_Peru.svg" class="img-candidato" alt="Sheep"></td>'+
+                    '<td><div class="progress-element progress-element--html"><p class="progress-label">'+it.votos+' votos</p><div class="progress-container">'+
+                    '<progress max="100" value="20">95%</progress></div></div></td></tr>';
+                $('.lista-candidatos-resultado').append(item)
             }
         });
 
