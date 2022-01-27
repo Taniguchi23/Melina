@@ -16,6 +16,7 @@ class CreatePartidosTable extends Migration
         Schema::create('partidos', function (Blueprint $table) {
             $table->id();
             $table->string('nombre',55);
+            $table->string('siglas',10);
             $table->string('imagen',65)->nullable();
             $table->timestamps();
         });

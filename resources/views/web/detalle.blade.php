@@ -79,12 +79,22 @@
 
         $(document).on('ready', function(){
 
-            $.get("{{url('/api/votacion')}}", function(data, status){
-                alert("Data: " + data + "\nStatus: " + status);
-            });
-
             $('.btn-votar').on('click', function(){
-                alert(5);
+                $.ajax({
+                    type: 'POST',
+                    url: '{{url('/api/votacion')}}',
+                    data: JSON.stringify({'evento_id': 1,'candidato_id': 1}),
+                    success: function(a){
+                        console.log(a);
+                    },
+                    error: function (xhr, ajaxOptions, thrownError) {
+                        var r = xhr?.responseJSON;
+                        if(r != null){
+                            alert(r.message);
+                        }
+
+                    }
+                });
             });
 
         });

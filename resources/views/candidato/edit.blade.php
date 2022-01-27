@@ -10,7 +10,8 @@
                     </div>
                     <div class="col-sm-6">
                         <ol class="breadcrumb float-sm-right">
-                            <li class="breadcrumb-item"><a href="{{route('candidato.index')}}">Inicio</a></li>
+                            <li class="breadcrumb-item"><a href="{{route('home')}}">Inicio</a></li>
+                            <li class="breadcrumb-item"><a href="{{route('candidato.index')}}">Candidato</a></li>
                             <li class="breadcrumb-item active">Editar Candidato</li>
                         </ol>
                     </div>
@@ -42,16 +43,16 @@
                                     <label for="inputName">Distrito  </label>
                                     <select name="distrito_id" >
                                         <option value="{{$candidato->distrito->id}}"> {{$candidato->distrito->nombre}}</option>
-                                        @foreach($candidato->distrito  as $distrito)
+                                        @foreach($distritos as $distrito)
                                             <option value="{{$distrito->id}}">{{$distrito->nombre}}</option>
                                         @endforeach
                                     </select>
                                 </div>
                                 <div class="form-group">
                                     <label for="inputName">Partido  </label>
-                                    <select name="distrito_id" >
+                                    <select name="partido_id" >
                                         <option value="{{$candidato->partido->id}}"> {{$candidato->partido->nombre}}</option>
-                                        @foreach($candidato->partido  as $partido)
+                                        @foreach($partidos as $partido)
                                             <option value="{{$partido->id}}">{{$partido->nombre}}</option>
                                         @endforeach
                                     </select>

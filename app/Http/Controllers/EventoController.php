@@ -21,7 +21,9 @@ class EventoController extends Controller
        $evento->titulo = $request->titulo;
        $evento->slug = $request->slug;
        $evento->contenido = $request->contenido;
+       $evento->descripcion = $request->descripcion;
        $evento->fecha = $request->fecha;
+
        $evento->save();
        return redirect()->route('evento.index');
     }

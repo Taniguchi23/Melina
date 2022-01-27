@@ -11,6 +11,7 @@
                     <div class="col-sm-6">
                         <ol class="breadcrumb float-sm-right">
                             <li class="breadcrumb-item"><a href="{{route('home')}}">Inicio</a></li>
+                            <li class="breadcrumb-item"><a href="{{route('evento.index')}}">Evento</a></li>
                             <li class="breadcrumb-item active">Nuevo Evento</li>
                         </ol>
                     </div>
@@ -40,16 +41,17 @@
                                         <input type="text" class="form-control" name="slug" placeholder="Slug: Url Seo" required>
                                     </div>
 
-                                    <div class="form-group">
-                                        <input type="date" class="form-control" name="fecha_publicacion" placeholder="Fecha del Evento" required>
-                                    </div>
+
                                     <div class="form-group">
                     <textarea type="text" id="compose-textarea" class="form-control" name="contenido" style="height: 300px" required>
 
                     </textarea>
                                     </div>
                                     <div class="form-group">
-                                        <input type="text" class="form-control" name="total_votos" placeholder="Total de votos" required>
+                                        <input type="text" class="form-control" name="descripcion" placeholder="Pequeña descripcion" required>
+                                    </div>
+                                    <div class="form-group">
+                                        <input type="text" class="form-control" name="fecha" placeholder="Fecha seo: enero-2022" required>
                                     </div>
 
                                 </div>

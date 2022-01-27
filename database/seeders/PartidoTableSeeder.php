@@ -17,8 +17,10 @@ class PartidoTableSeeder extends Seeder
         $partidos = [
             [
                 'nombre' => "Alianza para el Progreso",
+                'siglas' => "APP"
             ],[
-                'nombre' => "PPC",
+                'nombre' => "Partido Político Cristiano",
+                'siglas' => "PPC"
             ],
         ];
         Partido::insert($partidos);
