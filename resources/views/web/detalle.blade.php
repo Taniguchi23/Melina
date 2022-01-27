@@ -282,6 +282,7 @@
         }
 
         .progress-label {
+            font-size: 14px !important;
             position: relative;
         }
 
@@ -313,37 +314,13 @@
 
         @keyframes progress-html {
             to {
-                width: 95%;
-            }
-        }
-
-        @keyframes progress-css {
-            to {
-                width: 80%;
-            }
-        }
-
-        @keyframes progress-javascript {
-            to {
-                width: 65%;
+                width: 45%;
             }
         }
 
         @keyframes progress-text-html {
             to {
-                --num: 95;
-            }
-        }
-
-        @keyframes progress-text-css {
-            to {
-                --num: 80;
-            }
-        }
-
-        @keyframes progress-text-javascript {
-            to {
-                --num: 65;
+                --num: 45;
             }
         }
 
