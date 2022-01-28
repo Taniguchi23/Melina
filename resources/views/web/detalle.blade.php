@@ -27,14 +27,7 @@
 
                     <div class="encuesta-votacion">
 
-                        <form>
-
-
-                            {{-- <div class="col-12 lista-candidatos">
-
-                             </div> --}}
-
-
+                        <form id="js-form-candidatos">
 
                             <table class="table table-image table-candidato">
                                 <tbody class="lista-candidatos">
@@ -43,60 +36,18 @@
                             </table>
 
 
-                            <table class="table table-image table-candidato">
-                                <tbody class="lista-candidatos-resultado">
-
-                                </tbody>
-                            </table>
-
-
-                            {{-- <table class="table table-image table-candidato">
-                                <tbody>
-                                <tr>
-                                    <td class="name-votos">Aly Carlos Villarroel</td>
-                                    <td class="w-80"><img
-                                            src="https://i.pinimg.com/originals/c5/f5/b0/c5f5b093d6147305ab51eafa3bbd597c.jpg"
-                                            class="img-candidato" alt="Sheep"></td>
-                                    <td class="w-80"><img
-                                            src="https://upload.wikimedia.org/wikipedia/commons/3/3c/Alianza_para_el_Progreso_Peru.svg"
-                                            class="img-candidato" alt="Sheep"></td>
-                                    <td>
-                                        <div class="progress-element progress-element--html">
-                                            <p class="progress-label">HTML</p>
-                                            <div class="progress-container">
-                                                <progress max="100" value="90">10%</progress>
-                                            </div>
-                                        </div>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td class="name-votos">Erasmo Cárdenas Obregón</td>
-                                    <td class="w-80"><img
-                                            src="https://i.pinimg.com/originals/c5/f5/b0/c5f5b093d6147305ab51eafa3bbd597c.jpg"
-                                            class="img-candidato" alt="Sheep"></td>
-                                    <td class="w-80"><img
-                                            src="https://upload.wikimedia.org/wikipedia/commons/c/c0/Logo_Oficial_PPC.png"
-                                            class="img-candidato" alt="Sheep"></td>
-                                    <td>
-                                        <div class="progress-element progress-element--html">
-                                            <p class="progress-label">HTML</p>
-                                            <div class="progress-container">
-                                                <progress max="100" value="95">95%</progress>
-                                            </div>
-                                        </div>
-                                    </td>
-                                </tr>
-                                </tbody>
-                            </table> --}}
-
-                            <div class="col-12 lista-votos">
-                                resultado de votos
-                            </div>
-
+                            
+                            <button class="btn btn-primary">Resultados</button>
+                            {{-- <button class="btn btn-primary btn-votar">Votar</button> --}}
+                            <input class="btn btn-primary btn-votar" type="submit" value="Votar">
+                            
                         </form>
+                        
+                        <table class="table table-image table-candidato">
+                            <tbody class="lista-candidatos-resultado">
 
-                        <button class="btn btn-primary">Resultados</button>
-                        <button class="btn btn-primary btn-votar">Votar</button>
+                            </tbody>
+                        </table>
 
                     </div>
 
@@ -145,6 +96,8 @@
 
         .table-candidato tr:hover {
             background-color: rgba(0,0,0,.05);
+            cursor: pointer;
+
         }
 
         .w-80 {
@@ -330,23 +283,27 @@
         $.get("{{ url('/api/lista/' . $evento->id) }}", function(data, status) {
             for (var it of data) {
                 var item =` 
-                    '<tr id="${it.id}">
-                    <td class="w-10"><input type="radio" class="option-input radio" name="votar" value="${it.id}" /></td><td>${it.nombre}</td>
+                    '<tr id="votar-${it.id}" data-voto="${it.id}">
+                    <td class="w-10"><input type="radio" class="option-input radio" id="radio-${it.id}" name="votar" value="${it.id}" /></td><td>${it.nombre}</td>
                     '<td class="w-80"><img src="https://i.pinimg.com/originals/c5/f5/b0/c5f5b093d6147305ab51eafa3bbd597c.jpg" class="img-candidato" alt="Sheep"></td>
                     '<td class="w-80"><img src="https://upload.wikimedia.org/wikipedia/commons/3/3c/Alianza_para_el_Progreso_Peru.svg" class="img-candidato" alt="Sheep"></td>
                     </tr>`;
-                $('.lista-candidatos').append(item)
+                $('.lista-candidatos').append(item);
+
+                document.getElementById(`votar-${it.id}`).addEventListener('click', function() {
+                    let idbtn = this.dataset.voto
+                    let radiobtn = document.getElementById(`radio-${idbtn}`);
+                    radiobtn.checked = true;
+                })
             }
         });
 
+
+
         $.get("{{url('/api/resultados/'.$evento->id)}}",function (data,status){
-
             const newdata = data.sort((a, b) => b.porcentaje - a.porcentaje)
-
             for (var it of newdata){
-
                 let porcen = it.porcentaje.toString().split('.')
-
                 var item =`
                     <tr>
                     <td class="name-votos">${it.nombre}</td><td class="w-80">
@@ -390,6 +347,14 @@
             }
         });
 
+        var jsform = document.getElementById('js-form-candidatos');
+            console.log(jsform);
+
+            jsform.addEventListener('submit', function(e) {
+                e.preventDefault()
+                console.log(jsform.votar)
+            })
+        
         $(document).on('ready', function() {
 
             $('.btn-votar').on('click', function() {
