@@ -27,14 +27,7 @@
 
                     <div class="encuesta-votacion">
 
-                        <form>
-
-
-                            {{-- <div class="col-12 lista-candidatos">
-
-                             </div> --}}
-
-
+                        <form id="js-form-candidatos">
 
                             <table class="table table-image table-candidato">
                                 <tbody class="lista-candidatos">
@@ -43,60 +36,18 @@
                             </table>
 
 
-                            <table class="table table-image table-candidato">
-                                <tbody class="lista-candidatos-resultado">
 
-                                </tbody>
-                            </table>
-
-
-                            <table class="table table-image table-candidato">
-                                <tbody>
-                                <tr>
-                                    <td class="name-votos">Aly Carlos Villarroel</td>
-                                    <td class="w-80"><img
-                                            src="https://i.pinimg.com/originals/c5/f5/b0/c5f5b093d6147305ab51eafa3bbd597c.jpg"
-                                            class="img-candidato" alt="Sheep"></td>
-                                    <td class="w-80"><img
-                                            src="https://upload.wikimedia.org/wikipedia/commons/3/3c/Alianza_para_el_Progreso_Peru.svg"
-                                            class="img-candidato" alt="Sheep"></td>
-                                    <td>
-                                        <div class="progress-element progress-element--html">
-                                            <p class="progress-label">HTML</p>
-                                            <div class="progress-container">
-                                                <progress max="100" value="90">10%</progress>
-                                            </div>
-                                        </div>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td class="name-votos">Erasmo Cárdenas Obregón</td>
-                                    <td class="w-80"><img
-                                            src="https://i.pinimg.com/originals/c5/f5/b0/c5f5b093d6147305ab51eafa3bbd597c.jpg"
-                                            class="img-candidato" alt="Sheep"></td>
-                                    <td class="w-80"><img
-                                            src="https://upload.wikimedia.org/wikipedia/commons/c/c0/Logo_Oficial_PPC.png"
-                                            class="img-candidato" alt="Sheep"></td>
-                                    <td>
-                                        <div class="progress-element progress-element--html">
-                                            <p class="progress-label">HTML</p>
-                                            <div class="progress-container">
-                                                <progress max="100" value="95">95%</progress>
-                                            </div>
-                                        </div>
-                                    </td>
-                                </tr>
-                                </tbody>
-                            </table>
-
-                            <div class="col-12 lista-votos">
-                                resultado de votos
-                            </div>
+                            <button class="btn btn-primary">Resultados</button>
+                            {{-- <button class="btn btn-primary btn-votar">Votar</button> --}}
+                            <input class="btn btn-primary btn-votar" type="submit" value="Votar">
 
                         </form>
 
-                        <button class="btn btn-primary">Resultados</button>
-                        <button class="btn btn-primary btn-votar">Votar</button>
+                        <table class="table table-image table-candidato">
+                            <tbody class="lista-candidatos-resultado">
+
+                            </tbody>
+                        </table>
 
                     </div>
 
@@ -143,6 +94,12 @@
             vertical-align: middle;
         }
 
+        .table-candidato tr:hover {
+            background-color: rgba(0,0,0,.05);
+            cursor: pointer;
+
+        }
+
         .w-80 {
             width: 80px;
         }
@@ -171,19 +128,19 @@
   -o-appearance: none;
   appearance: none;
   position: relative;
-  top: 13.33333px;
+  /* top: 13.33333px; */
   right: 0;
   bottom: 0;
   left: 0;
-  height: 40px;
-  width: 40px;
+  height: 22px;
+  width: 22px;
   transition: all 0.15s ease-out 0s;
-  background: #cbd1d8;
-  border: none;
+  background: lightgray;
+  border: 2px solid darkgray;;
   color: #fff;
   cursor: pointer;
   display: inline-block;
-  margin-right: 0.5rem;
+  /* margin-right: 0.5rem; */
   outline: none;
   position: relative;
   z-index: 1000;
@@ -192,19 +149,24 @@
   background: #9faab7;
 }
 .option-input:checked {
-  background: #40e0d0;
+    background: #40e0d0;
+    border: 2px solid darkgray;
 }
 .option-input:checked::before {
-  width: 40px;
-  height: 40px;
-  display:flex;
-  content: '\f00c';
-  font-size: 25px;
-  font-weight:bold;
-  position: absolute;
-  align-items:center;
-  justify-content:center;
-  font-family:'Font Awesome 5 Free';
+    width: 8px;
+    height: 8px;
+    display: flex;
+    content: "";
+    font-size: 25px;
+    font-weight: bold;
+    position: absolute;
+    align-items: center;
+    justify-content: center;
+    /* font-family: 'Font Awesome 5 Free'; */
+    background-color: #fff;
+    border-radius: 50%;
+    right: calc(50% - 4px);
+    top: calc(50% - 4px);
 }
 .option-input:checked::after {
   -webkit-animation: click-wave 0.65s;
@@ -225,16 +187,16 @@
 
 @keyframes click-wave {
   0% {
-    height: 40px;
-    width: 40px;
+    height: 22px;
+    width: 22px;
     opacity: 0.35;
     position: relative;
   }
   100% {
-    height: 200px;
-    width: 200px;
-    margin-left: -80px;
-    margin-top: -80px;
+    height: 80px;
+    width: 80px;
+    margin-left: -31px;
+    margin-top: -32px;
     opacity: 0;
   }
 }
@@ -273,15 +235,14 @@
             animation: progress-html 1s ease-in forwards;
         }
 
-        .progress-element--css .progress-container::before {
-            animation: progress-css 1s ease-in forwards;
-        }
-
-        .progress-element--javascript .progress-container::before {
-            animation: progress-javascript 1s ease-in forwards;
+        @keyframes progress-html {
+            to {
+                width: 45%;
+            }
         }
 
         .progress-label {
+            font-size: 14px !important;
             position: relative;
         }
 
@@ -291,76 +252,56 @@
             inherits: false;
         }
 
-        .progress-label::after {
+        /* .progress-label::after {
             counter-reset: num var(--num);
             content: counter(num) "%";
             position: absolute;
             top: 0;
             right: 0;
-        }
+        } */
 
         .progress-element--html .progress-label::after {
             animation: progress-text-html 1s ease-in forwards;
         }
 
-        .progress-element--css .progress-label::after {
-            animation: progress-text-css 1s ease-in forwards;
-        }
-
-        .progress-element--javascript .progress-label::after {
-            animation: progress-text-javascript 1s ease-in forwards;
-        }
-
-        @keyframes progress-html {
-            to {
-                width: 95%;
-            }
-        }
-
-        @keyframes progress-css {
-            to {
-                width: 80%;
-            }
-        }
-
-        @keyframes progress-javascript {
-            to {
-                width: 65%;
-            }
-        }
-
         @keyframes progress-text-html {
             to {
-                --num: 95;
-            }
-        }
-
-        @keyframes progress-text-css {
-            to {
-                --num: 80;
-            }
-        }
-
-        @keyframes progress-text-javascript {
-            to {
-                --num: 65;
+                --num: 45;
             }
         }
 
     </style>
 
     <script>
+
+    function addAnimation(keyframe){
+        var ss=document.createElement('style');
+        ss.innerText=keyframe;
+        document.head.appendChild(ss);
+    }
+
         $.get("{{ url('/api/lista/' . $evento->id) }}", function(data, status) {
             for (var it of data) {
-                var item =
-                    '<tr><td class="w-10"><input type="radio" class="option-input radio" name="votar" /></td><td>'+ it.nombre +'</td>'+
-                    '<td class="w-80"><img src="https://i.pinimg.com/originals/c5/f5/b0/c5f5b093d6147305ab51eafa3bbd597c.jpg" class="img-candidato" alt="Sheep"></td>'+
-                    '<td class="w-80"><img src="https://upload.wikimedia.org/wikipedia/commons/3/3c/Alianza_para_el_Progreso_Peru.svg" class="img-candidato" alt="Sheep"></td> </tr>';
-                $('.lista-candidatos').append(item)
+                var item =`
+                    '<tr id="votar-${it.id}" data-voto="${it.id}">
+                    <td class="w-10"><input type="radio" class="option-input radio" id="radio-${it.id}" name="votar" value="${it.id}" /></td><td>${it.nombre}</td>
+                    '<td class="w-80"><img src="https://i.pinimg.com/originals/c5/f5/b0/c5f5b093d6147305ab51eafa3bbd597c.jpg" class="img-candidato" alt="Sheep"></td>
+                    '<td class="w-80"><img src="https://upload.wikimedia.org/wikipedia/commons/3/3c/Alianza_para_el_Progreso_Peru.svg" class="img-candidato" alt="Sheep"></td>
+                    </tr>`;
+                $('.lista-candidatos').append(item);
+
+                document.getElementById(`votar-${it.id}`).addEventListener('click', function() {
+                    let idbtn = this.dataset.voto
+                    let radiobtn = document.getElementById(`radio-${idbtn}`);
+                    radiobtn.checked = true;
+                })
             }
         });
 
+
+
         $.get("{{url('/api/resultados/'.$evento->id)}}",function (data,status){
+
             for (var it of data){
 
                 var item =
@@ -370,9 +311,60 @@
                     '<td><div class="progress-element progress-element--html"><p class="progress-label">'+it.votos+' votos</p><div class="progress-container">'+
                     '<progress max="100" value="20">95%</progress></div></div></td></tr>';
 
+            const newdata = data.sort((a, b) => b.porcentaje - a.porcentaje)
+            for (var it of newdata){
+                let porcen = it.porcentaje.toString().split('.')
+                var item =`
+                    <tr>
+                    <td class="name-votos">${it.nombre}</td><td class="w-80">
+                    <img src="https://i.pinimg.com/originals/c5/f5/b0/c5f5b093d6147305ab51eafa3bbd597c.jpg" class="img-candidato" alt="Sheep"></td>
+                    <td class="w-80"><img src="https://upload.wikimedia.org/wikipedia/commons/3/3c/Alianza_para_el_Progreso_Peru.svg" class="img-candidato" alt="Sheep"></td>
+                    <td><div class="progress-element progress-element--${it.id}"><p class="progress-label">${it.votos} votos</p><div class="progress-container">
+                    <progress max="100" value="20">95%</progress></div></div></td>
+                    </tr>`;
+
+                    addAnimation(`
+                    .progress-element--${it.id} .progress-container::before {
+                        animation: progress-${it.id} 1s ease-in forwards;
+                    }
+                    @keyframes progress-${it.id} {
+                        to {
+                            width: ${it.porcentaje}%;
+                        }
+                    }
+
+                    .progress-element--${it.id} .progress-label::after {
+                        animation: progress-text-${it.id} 1s ease-in forwards;
+                    }
+
+                    @keyframes progress-text-${it.id} {
+                        to {
+                            --num: ${porcen[0]};
+                        }
+                    }
+
+                    .progress-label::after {
+                        counter-reset: num var(--num);
+                        content: counter(num) ".${porcen[1]}%";
+                        position: absolute;
+                        top: 0;
+                        right: 0;
+                    }
+                    `)
+
+
+
                 $('.lista-candidatos-resultado').append(item)
             }
-        });
+        };
+
+        var jsform = document.getElementById('js-form-candidatos');
+            console.log(jsform);
+
+            jsform.addEventListener('submit', function(e) {
+                e.preventDefault()
+                console.log(jsform.votar)
+            })
 
         $(document).on('ready', function() {
 
