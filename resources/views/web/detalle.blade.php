@@ -29,30 +29,31 @@
 
                         <form id="js-form-candidatos">
 
-                            <table class="table table-image table-candidato">
+                            <table id="table-votar" class="table table-image table-candidato">
                                 <tbody class="lista-candidatos">
-
                                 </tbody>
                             </table>
 
-
+                            <table id="table-resul" class="table table-image table-candidato">
+                                <tbody class="lista-candidatos-resultado">
+                                </tbody>
+                            </table>
                             
-                            <button class="btn btn-primary">Resultados</button>
-                            {{-- <button class="btn btn-primary btn-votar">Votar</button> --}}
-                            <input class="btn btn-primary btn-votar" type="submit" value="Votar">
+                            <p class="text-right" style="padding: 0 12px 0 0">
+                            <button id="btn-resul" class="btn btn-outline-primary">Resultados</button>
+                            <button id="btn-votar" class="btn btn-primary btn-votar">Votar</button>
+                            <button id="btn-atras" class="btn btn-outline-primary">Atras</button>
+                            {{-- <input class="btn btn-primary btn-votar" type="submit" value="Votar"> --}}
+                            </p>
                             
                         </form>
                         
-                        <table class="table table-image table-candidato">
-                            <tbody class="lista-candidatos-resultado">
 
-                            </tbody>
-                        </table>
 
                     </div>
 
 
-
+                    {{$evento->id}}
 
 
 
@@ -88,7 +89,7 @@
             </div>
         </div>
     </div>
-
+    
     <style>
         .table-candidato td {
             vertical-align: middle;
@@ -204,24 +205,24 @@
         /* progress */
 
 
-        progress {
+        /* progress {
             opacity: 0;
-        }
+        } */
 
-        .progress-element {
-            /* width: 200px; */
+        /* .progress-element {
+            width: 200px;
             margin: 0 0 10px;
-        }
+        } */
 
         .progress-container {
             position: relative;
             background: #eee;
             height: 20px;
-            border-radius: 6px;
+            border-radius: 3px;
             overflow: hidden;
         }
 
-        .progress-container::before {
+        /* .progress-container::before {
             content: "";
             position: absolute;
             top: 0;
@@ -229,28 +230,30 @@
             height: 100%;
             width: 0;
             background: turquoise;
-        }
+        } */
 
-        .progress-element--html .progress-container::before {
+        /* .progress-element--html .progress-container::before {
             animation: progress-html 1s ease-in forwards;
-        }
+        } */
 
-        @keyframes progress-html {
+        /* @keyframes progress-html {
             to {
                 width: 45%;
             }
-        }
+        } */
 
         .progress-label {
             font-size: 14px !important;
             position: relative;
+            display: flex;
+            justify-content: space-between;
         }
-
+/* 
         @property --num {
             syntax: "<integer>";
             initial-value: 0;
             inherits: false;
-        }
+        } */
 
         /* .progress-label::after {
             counter-reset: num var(--num);
@@ -260,7 +263,7 @@
             right: 0;
         } */
 
-        .progress-element--html .progress-label::after {
+        /* .progress-element--html .progress-label::after {
             animation: progress-text-html 1s ease-in forwards;
         }
 
@@ -268,7 +271,7 @@
             to {
                 --num: 45;
             }
-        }
+        } */
 
     </style>
 
@@ -299,54 +302,71 @@
             }
         });
 
+        var resul = $('#table-resul')
+        var votar = $('#table-votar')
+
+        var btnVotar = $('#btn-votar')
+        var btnAtras = $('#btn-atras')
+        var btnResul = $('#btn-resul')
+        btnAtras.hide();
+        resul.hide();
+
+        btnResul.click(function() {
+            showResul();
+            resul.show();
+            votar.hide();
+            btnVotar.hide();
+            btnAtras.show();
+            btnResul.hide();
+        })
+
+        btnAtras.click(function() {
+            resul.hide();
+            votar.show();
+            btnAtras.hide();
+            btnVotar.show();
+            btnResul.show();
+        })
 
 
-        $.get("{{url('/api/resultados/'.$evento->id)}}",function (data,status){
-            const newdata = data.sort((a, b) => b.porcentaje - a.porcentaje)
-            for (var it of newdata){
-                let porcen = it.porcentaje.toString().split('.')
-                var item =`
-                    <tr>
+        const formatter = new Intl.NumberFormat('en-US', {
+        minimumFractionDigits: 2,      
+        maximumFractionDigits: 2,
+        });
+
+        function showResul() {
+            $.get("{{url('/api/resultados/'.$evento->id)}}",function (data,status){
+            var total = data.reduce((n , {votos}) => n + votos, 0);
+            $('.lista-candidatos-resultado').empty();
+            for (var it of data){
+                var porc = (it.votos * 100) / total;
+                var item = `<tr>
                     <td class="name-votos">${it.nombre}</td><td class="w-80">
                     <img src="https://i.pinimg.com/originals/c5/f5/b0/c5f5b093d6147305ab51eafa3bbd597c.jpg" class="img-candidato" alt="Sheep"></td>
                     <td class="w-80"><img src="https://upload.wikimedia.org/wikipedia/commons/3/3c/Alianza_para_el_Progreso_Peru.svg" class="img-candidato" alt="Sheep"></td>
-                    <td><div class="progress-element progress-element--${it.id}"><p class="progress-label">${it.votos} votos</p><div class="progress-container">
-                    <progress max="100" value="20">95%</progress></div></div></td>
+                    <td>
+                        <div class="progress-element progress-element--${it.id}" ><p class="progress-label"><span>${it.votos} votos</span> <span><span class="count">${porc}</span>%</span></p><div class="progress-container">
+                        <div class="barra-votacion" style="background:red;width:0;height:20px" value="${porc}"></div></div></div>
+                    </td>
                     </tr>`;
-                        
-                    addAnimation(`
-                    .progress-element--${it.id} .progress-container::before {
-                        animation: progress-${it.id} 1s ease-in forwards;
-                    }
-                    @keyframes progress-${it.id} {
-                        to {
-                            width: ${it.porcentaje}%;
-                        }
-                    }
-
-                    .progress-element--${it.id} .progress-label::after {
-                        animation: progress-text-${it.id} 1s ease-in forwards;
-                    }
-
-                    @keyframes progress-text-${it.id} {
-                        to {
-                            --num: ${porcen[0]};
-                        }
-                    }
-
-                    .progress-label::after {
-                        counter-reset: num var(--num);
-                        content: counter(num) ".${porcen[1]}%";
-                        position: absolute;
-                        top: 0;
-                        right: 0;
-                    }
-                    `)
-
-
-                $('.lista-candidatos-resultado').append(item)
+                $('.lista-candidatos-resultado').append(item);
             }
+            $('.barra-votacion').each(function(a){
+                $(this).animate({width: $(this).attr('value')+'%'}, 1500, 'linear');
+            });
+            $('.count').each(function () {
+                $(this).prop('counter', 0).animate({counter: $(this).text()}, {
+                    duration: 1500,
+                    easing: 'linear',
+                    step: function (step) {
+                        $(this).text('' + formatter.format(step));
+                    }
+                });
+            });
         });
+        }
+
+
 
         var jsform = document.getElementById('js-form-candidatos');
             console.log(jsform);
