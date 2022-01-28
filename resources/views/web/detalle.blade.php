@@ -294,6 +294,7 @@
                     let idbtn = this.dataset.voto
                     let radiobtn = document.getElementById(`radio-${idbtn}`);
                     radiobtn.checked = true;
+                    console.log('commet')
                 })
             }
         });
