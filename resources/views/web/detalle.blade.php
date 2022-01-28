@@ -362,12 +362,14 @@
 
         $.get("{{url('/api/resultados/'.$evento->id)}}",function (data,status){
             for (var it of data){
+
                 var item =
                     '<tr ><td class="name-votos">'+it.nombre+'</td><td class="w-80">'+
                     '<img src="https://i.pinimg.com/originals/c5/f5/b0/c5f5b093d6147305ab51eafa3bbd597c.jpg" class="img-candidato" alt="Sheep"></td>'+
                     '<td class="w-80"><img src="https://upload.wikimedia.org/wikipedia/commons/3/3c/Alianza_para_el_Progreso_Peru.svg" class="img-candidato" alt="Sheep"></td>'+
                     '<td><div class="progress-element progress-element--html"><p class="progress-label">'+it.votos+' votos</p><div class="progress-container">'+
                     '<progress max="100" value="20">95%</progress></div></div></td></tr>';
+
                 $('.lista-candidatos-resultado').append(item)
             }
         });
