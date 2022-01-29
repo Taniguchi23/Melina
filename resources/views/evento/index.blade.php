@@ -85,6 +85,7 @@
                                     {{$evento->fecha}}
                                 </td>
                                 <td>
+
                                     <img src="{{Storage::url($evento->imagen)}}" alt="" style="width: 50px">
                                 </td>
                                 <td class="project-state">

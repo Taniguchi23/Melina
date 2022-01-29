@@ -24,9 +24,10 @@ class ApiController extends Controller
     public function votacion (Request  $request){
 
         $req = json_decode(file_get_contents("php://input"));
+        $ip = $request->ip();
 
-        if(isset($req)) {
-            $vote = Vote::where('ip', $request->ip())->first();
+        if(isset($req) && isset($ip)) {
+            $vote = Vote::where('ip', $request->ip())->where('evento_id',$req->evento_id)->first();
 
             if (isset($vote) && (time() - strtotime($vote->created_at)) / 3600 <= 24) {
                 return Response::json(['status' => 'error', 'message' => 'vuelve a votar en 24 horas'], 400);
@@ -39,6 +40,7 @@ class ApiController extends Controller
                 $voto->ip = $request->ip();
                 $voto->evento_id = $req->evento_id;
                 $voto->save();
+
                 $evento = Evento::find($req->evento_id)->first();
                 $evento->total_votos++;
                 $evento->save();
@@ -51,12 +53,12 @@ class ApiController extends Controller
     public function resultado($id){
         $total= 0;
         $candidatos = [];
-        $datos = Dato::where('evento_id',$id)->get();
+        $datos = Dato::where('evento_id',$id)->orderByDesc('votos')->get();
+        //foreach ($datos as $d){
+          //  $total += $d->votos;
+        //}
         foreach ($datos as $d){
-            $total += $d->votos;
-        }
-        foreach ($datos as $d){
-            $candidatos[]= ['nombre' => $d->candidato->nombre, 'id' => $d->candidato->id ,'votos'=> $d->votos,'porcentaje'=> round(($d->votos/$total)*100,1)] ;
+            $candidatos[]= ['nombre' => $d->candidato->nombre, 'id' => $d->candidato->id ,'votos'=> $d->votos] ; //,'porcentaje'=> round(($d->votos/$total)*100,1)
         }
         return Response::json($candidatos, 200);
     }

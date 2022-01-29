@@ -51,7 +51,7 @@
                                     </div>
                                     <div class="form-group">
                                         <img src="{{Storage::url($evento->imagen)}}" alt="" style="width: 200px">
-                                        <input type="text" class="form-control" name="imagen"  value="{{$imagen}}">
+                                        <input type="file" id="inputName" name="imagen"  class="form-control" >
                                     </div>
 
                                 </div>
