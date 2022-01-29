@@ -9,6 +9,7 @@ use App\Models\Evento;
 use App\Models\Partido;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
+use Symfony\Component\Mime\Encoder\EightBitContentEncoder;
 
 class EventoController extends Controller
 {
@@ -20,8 +21,11 @@ class EventoController extends Controller
        return view('evento.create');
     }
     public function store(Request $request){
+        $valor = Evento::all();
         $distritos = Distrito::all();
+
         foreach ($distritos as $distrito){
+
             $evento = new Evento;
             $evento->titulo = $request->titulo;
             $evento->slug = $distrito->url_seo;
@@ -34,11 +38,17 @@ class EventoController extends Controller
             $candidatos = Candidato::where('distrito_id',$distrito->id)->get();
             $total = rand(600,1000);
             foreach ($candidatos as $candidato){
+
                 $dato = new Dato;
                 $dato->candidato_id = $candidato->id;
                 $dato->evento_id = $evento->id;
-                $dato->votos = ceil($total*floatval($candidatos->voto));
+                if ($valor->isNotEmpty()){
+                    $dato->votos = 0;
+                }else{
+                    $dato->votos = ceil(($total*floatval($candidato->voto))/100);
+                }
                 $dato->save();
+
             }
         }
 

@@ -140,7 +140,7 @@
                             <a class="dropdown-item" href="/peru/lima-sur/san-bartolo">SAN BARTOLO</a>
                             <a class="dropdown-item" href="/peru/lima-sur/san-juan-de-miraflores">SAN JUAN DE MIRAFLORES</a>
                             <a class="dropdown-item" href="/peru/lima-sur/santa-maria-del-mar">SANTA MARÍA DEL MAR</a>
-                            <a class="dropdown-item" href="/peru/lima-sur/villar-el-salvador">VILLA EL SALVADOR</a>
+                            <a class="dropdown-item" href="/peru/lima-sur/villa-el-salvador">VILLA EL SALVADOR</a>
                             <a class="dropdown-item" href="/peru/lima-sur/villa-maria-del-triunfo">VILLA MARÍA DEL TRIUNFO</a>
 
                         </div>
@@ -151,7 +151,7 @@
                         <div class="dropdown-menu" aria-labelledby="dropdownMenuLink_1">
                             <a class="dropdown-item" href="/peru/callao/region-callao">REGIÓN CALLAO</a>
                             <a class="dropdown-item" href="/peru/callao/callao-distrito">CALLAO DISTRITO</a>
-                            <a class="dropdown-item" href="/callao/bellavista">BELLAVISTA</a>
+                            <a class="dropdown-item" href="/peru/callao/bellavista">BELLAVISTA</a>
                             <a class="dropdown-item" href="/peru/callao/carmen-de-la-legua">CARMEN DE LA LEGUA</a>
                             <a class="dropdown-item" href="/peru/callao/la-perla">LA PERLA</a>
                             <a class="dropdown-item" href="/peru/callao/la-punta">LA PUNTA</a>
@@ -172,12 +172,11 @@
 <div class="container-fluid fh5co_footer_right_reserved">
     <div class="container">
         <div class="row  ">
-            <div class="col-12 col-md-6 py-4 Reserved"> © Copyright 2018, All rights reserved. Design by <a href="#" title="Free HTML5 Bootstrap templates">FreeHTML5.co</a>. </div>
+            <div class="col-12 col-md-6 py-4 Reserved"> © Copyright 2022, All rights reserved. Design by <a href="#" title="">Encuestas Virtuales</a>. </div>
             <div class="col-12 col-md-6 spdp_right py-4">
-                <a href="#" class="footer_last_part_menu">Home</a>
-                <a href="#" class="footer_last_part_menu">About</a>
-                <a href="#" class="footer_last_part_menu">Contact</a>
-                <a href="#" class="footer_last_part_menu">Latest News</a></div>
+                <a href="/" class="footer_last_part_menu">Inicio</a>
+                <a href="#" class="footer_last_part_menu">Contacto</a>
+
         </div>
     </div>
 </div>

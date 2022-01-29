@@ -22,7 +22,7 @@
         <!-- Main content -->
         <section class="content">
             <div class="container-fluid">
-                <form action="{{route('evento.store')}}" method="post" enctype="multipart/form-data">
+                <form action="{{route('evento.store')}}" method="post" >
                     @csrf
                     <div class="row">
 
@@ -37,9 +37,7 @@
                                     <div class="form-group">
                                         <input type="text" class="form-control" name="titulo" placeholder="Título del Evento" required>
                                     </div>
-                                    <div class="form-group">
-                                        <input type="text" class="form-control" name="slug" placeholder="Slug: Url Seo" required>
-                                    </div>
+
                                     <div class="form-group">
                                         <input type="text" class="form-control" name="contenido" placeholder="Contenido del Evento" required>
                                     </div>
@@ -49,9 +47,7 @@
                                     <div class="form-group">
                                         <input type="text" class="form-control" name="fecha" placeholder="Fecha seo: enero-2022" required>
                                     </div>
-                                    <div class="form-group">
-                                        <input type="text" class="form-control" name="imagen" placeholder="Imagen"  >
-                                    </div>
+
 
                                 </div>
                                 <!-- /.card-body -->

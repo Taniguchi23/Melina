@@ -19,7 +19,7 @@
                             <div class="col-md-7 animate-box">
                                 <a href="/peru/{{$distrito->region->url_seo}}/{{$evento->slug}}/{{$evento->fecha}}" class="fh5co_magna py-2"> {{$evento->titulo}}  </a>
                                 <a href="/peru/{{$distrito->region->url_seo}}/{{$evento->slug}}/{{$evento->fecha}}" class="fh5co_mini_time py-3"> Encuesta -
-                                    April 18,2016 </a>
+                                    {{$evento->created_at}}</a>
                                 <div class="fh5co_consectetur"> {{$evento->descripcion}}
                                 </div>
                             </div>
@@ -30,7 +30,7 @@
                 </div>
                 <div class="col-md-3 animate-box" data-animate-effect="fadeInRight">
                     <div>
-                        <div class="fh5co_heading fh5co_heading_border_bottom py-2 mb-4">Tags</div>
+                        <div class="fh5co_heading fh5co_heading_border_bottom py-2 mb-4">{{$distrito->region->nombre}}</div>
                     </div>
                     <div class="clearfix"></div>
                     <div class="fh5co_tags_all">
@@ -39,7 +39,7 @@
                         @endforeach
                     </div>
                     <div>
-                        <div class="fh5co_heading fh5co_heading_border_bottom pt-3 py-2 mb-4">Most Popular</div>
+                        <div class="fh5co_heading fh5co_heading_border_bottom pt-3 py-2 mb-4">Últimas Encuestas</div>
                     </div>
                     @foreach($e as $eve)
                         <div class="row pb-3">
@@ -55,7 +55,7 @@
 
                 </div>
             </div>
-            <div class="row mx-0">
+            <!--div class="row mx-0">
                 <div class="col-12 text-center pb-4 pt-4">
                     <a href="#" class="btn_mange_pagging"><i class="fa fa-long-arrow-left"></i>&nbsp;&nbsp; Previous</a>
                     <a href="#" class="btn_pagging">1</a>
@@ -64,7 +64,7 @@
                     <a href="#" class="btn_pagging">...</a>
                     <a href="#" class="btn_mange_pagging">Next <i class="fa fa-long-arrow-right"></i>&nbsp;&nbsp; </a>
                 </div>
-            </div>
+            </div-->
         </div>
     </div>
 

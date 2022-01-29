@@ -22,6 +22,7 @@
                 <a class="btn btn-success float-right" href="{{route('evento.create')}}">Nuevo Evento</a>
             </div>
         </div>
+
         <!-- Main content -->
         <section class="content">
 

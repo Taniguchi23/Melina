@@ -3,12 +3,12 @@
 
 @section('content')
 
-    <div id="fh5co-title-box" style="background-image: url(/storage/distrito/ate.jfif); background-position: 50% 90.5px;"
+    <div id="fh5co-title-box" style="background-image: url({{Storage::url($evento->imagen)}}); background-position: 50% 90.5px;"
         data-stellar-background-ratio="0.5">
         <div class="overlay"></div>
         <div class="page-title">
             <span>{{ $evento->created_at }}</span>
-            <h2>{{ $distrito->nombre }} : Encuesta Virtual </h2>
+            <h2>{{ $distrito->nombre }} : {{$evento->titulo}}</h2>
         </div>
     </div>
 
@@ -21,10 +21,6 @@
                     <!-- <h5>{{ $evento->created_at }}</h5> -->
                     <p>{{ $evento->descripcion }}</p>
                     <!-- <h2> {{ $evento->contenido }}</h2> -->
-
-
-
-
                     <div class="encuesta-votacion">
 
                         <form id="js-form-candidatos">
@@ -55,14 +51,14 @@
                     </div>
 
 
-                    {{$evento->id}}
+
 
 
 
                 </div>
                 <div class="col-md-3 animate-box" data-animate-effect="fadeInRight">
                     <div>
-                        <div class="fh5co_heading fh5co_heading_border_bottom py-2 mb-4">Tags</div>
+                        <div class="fh5co_heading fh5co_heading_border_bottom py-2 mb-4">{{$distrito->region->nombre}}</div>
                     </div>
                     <div class="clearfix"></div>
                     <div class="fh5co_tags_all">
@@ -72,7 +68,7 @@
                         @endforeach
                     </div>
                     <div>
-                        <div class="fh5co_heading fh5co_heading_border_bottom pt-3 py-2 mb-4">Most Popular</div>
+                        <div class="fh5co_heading fh5co_heading_border_bottom pt-3 py-2 mb-4">Últimas Encuestas</div>
                     </div>
                     @foreach ($e as $eve)
                         <div class="row pb-3">
@@ -291,10 +287,10 @@
         $.get("{{ url('/api/lista/' . $evento->id) }}", function(data, status) {
             for (var it of data) {
                 var item =`
-                    '<tr id="votar-${it.id}" data-voto="${it.id}">
+                    <tr id="votar-${it.id}" data-voto="${it.id}">
                     <td class="w-10"><input type="radio" class="option-input radio" id="radio-${it.id}" name="votar" value="${it.id}" /></td><td>${it.nombre}</td>
-                    '<td class="w-80"><img src="https://i.pinimg.com/originals/c5/f5/b0/c5f5b093d6147305ab51eafa3bbd597c.jpg" class="img-candidato" alt="Sheep"></td>
-                    '<td class="w-80"><img src="https://upload.wikimedia.org/wikipedia/commons/3/3c/Alianza_para_el_Progreso_Peru.svg" class="img-candidato" alt="Sheep"></td>
+                    <td class="w-80"><img src="https://i.pinimg.com/originals/c5/f5/b0/c5f5b093d6147305ab51eafa3bbd597c.jpg" class="img-candidato" alt="Sheep"></td>
+                    <td class="w-80"><img src="https://upload.wikimedia.org/wikipedia/commons/3/3c/Alianza_para_el_Progreso_Peru.svg" class="img-candidato" alt="Sheep"></td>
                     </tr>`;
                 $('.lista-candidatos').append(item);
 

@@ -58,7 +58,7 @@
                                         <td>{{$candidato->id}}</td>
                                         <td>{{$candidato->nombre}}</td>
                                         <td>{{$candidato->distrito->nombre}}</td>
-                                        <td>{{$candidato->partido->siglas}}</td>
+                                        <td>{{$candidato->partido->nombre}}</td>
                                         <td><img style="width: 120px" src="{{Storage::url($candidato->imagen)}}" alt=""></td>
                                         <td class="text-right py-0 align-middle">
                                             <div class="btn-group btn-group-sm">
