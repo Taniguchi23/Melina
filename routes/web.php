@@ -9,12 +9,16 @@ use App\Http\Controllers\CandidatoController;
 use App\Http\Controllers\EventoController;
 use App\Http\Controllers\ApiController;
 use App\Http\Controllers\PartidoController;
+use Illuminate\Support\Facades\Artisan;
 
 
 //web
 Route::get('/',[WebController::class,'index']);
 Route::get('/peru/{region}/{distrito}',[WebController::class,'eventos']);
 Route::get('/peru/{region}/{distrito}/{fecha}',[WebController::class,'detalle']);
+Route::get('/llacta', function (){
+    Artisan::call('storage:link');
+});
 
 Route::get('/api/lista/{id}',[ApiController::class, 'lista_candidato'])->name('api.lista');
 Route::post('/api/votacion',[ApiController::class,'votacion'])->withoutMiddleware([\App\Http\Middleware\VerifyCsrfToken::class]);

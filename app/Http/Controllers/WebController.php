@@ -12,6 +12,10 @@ use Illuminate\Http\Request;
 class WebController extends Controller
 {
     public function index (){
+
+        $datos = [
+            'eventos' => Evento::where('')
+        ];
         return view('web.index');
     }
     public function eventos($region,$distrito){
