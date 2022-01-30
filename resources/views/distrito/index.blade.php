@@ -46,6 +46,7 @@
                                     </th>
                                     <th>Nombres</th>
                                     <th>Url Seo</th>
+                                    <th>Foto</th>
                                     <th class="text-center"></th>
                                 </tr>
                                 </thead>
@@ -55,6 +56,7 @@
                                         <td>{{$distrito->id}}</td>
                                         <td>{{$distrito->nombre}}</td>
                                         <td>{{$distrito->url_seo}}</td>
+                                        <td><img src="{{Storage::url('distritos/'.$distrito->archivo)}}" alt="" style="width: 100px"></td>
                                         <td class="text-right py-0 align-middle">
                                             <div class="btn-group btn-group-sm">
                                                 <a href="{{route('distrito.edit',$distrito->id)}}" class="btn btn-info"><i class="fas fa-edit"></i></a>

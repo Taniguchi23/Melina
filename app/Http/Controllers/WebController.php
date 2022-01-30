@@ -19,6 +19,7 @@ class WebController extends Controller
         $eventos = Evento::where('slug',$distrito)->orderBy('created_at','desc')->get();
         $dato = [
             'eventos' => $eventos,
+
             'e' => Evento::where('slug',$distrito)->orderBy('created_at','desc')->get(),
             'distritos' => Distrito::where('region_id',$r->id)->get(),
             'distrito' => Distrito::where('url_seo',$distrito)->first(),

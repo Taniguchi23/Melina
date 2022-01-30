@@ -18,8 +18,8 @@
                             </div>
                             <div class="col-md-7 animate-box">
                                 <a href="/peru/{{$distrito->region->url_seo}}/{{$evento->slug}}/{{$evento->fecha}}" class="fh5co_magna py-2"> {{$evento->titulo}}  </a>
-                                <a href="/peru/{{$distrito->region->url_seo}}/{{$evento->slug}}/{{$evento->fecha}}" class="fh5co_mini_time py-3"> Encuesta -
-                                    {{$evento->created_at}}</a>
+                                <a href="/peru/{{$distrito->region->url_seo}}/{{$evento->slug}}/{{$evento->fecha}}" class="fh5co_mini_time py-3"> Encuesta :
+                                    {{formato_fecha($evento->created_at)}}</a>
                                 <div class="fh5co_consectetur"> {{$evento->descripcion}}
                                 </div>
                             </div>
@@ -48,7 +48,7 @@
                             </div>
                             <div class="col-7 paddding">
                                 <div class="most_fh5co_treding_font"> {{$eve->titulo}}</div>
-                                <a href="/peru/{{$distrito->region->url_seo}}/{{$eve->slug}}/{{$eve->fecha}}"><div class="most_fh5co_treding_font_123">{{$eve->created_at}}</div></a>
+                                <a href="/peru/{{$distrito->region->url_seo}}/{{$eve->slug}}/{{$eve->fecha}}"><div class="most_fh5co_treding_font_123">{{formato_fecha($eve->created_at)}}</div></a>
                             </div>
                         </div>
                     @endforeach

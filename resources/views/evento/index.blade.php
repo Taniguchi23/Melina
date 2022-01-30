@@ -87,7 +87,7 @@
                                 </td>
                                 <td>
 
-                                    <img src="{{Storage::url($evento->imagen)}}" alt="" style="width: 50px">
+                                    <img src="{{Storage::url($evento->imagen)}}" alt="" style="width: 150px">
                                 </td>
                                 <td class="project-state">
                                     <span class="badge badge-success">{{$evento->total_votos}}</span>

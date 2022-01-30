@@ -7,6 +7,7 @@ use App\Models\Dato;
 use App\Models\Distrito;
 use App\Models\Evento;
 use App\Models\Vote;
+use Illuminate\Support\Facades\Storage;
 use Response;
 use Illuminate\Http\Request;
 
@@ -17,8 +18,16 @@ class ApiController extends Controller
         $candidatos = [];
         $datos = Dato::where('evento_id',$id)->get();
         foreach ($datos as $d){
-            $candidatos[]= ['nombre' => $d->candidato->nombre, 'id' => $d->candidato->id] ;
+            if ($d->candidato->imagen == null){
+                $valor_c = null;
+                $valor_p = null;
+            }else{
+                $valor_c = Storage::url($d->candidato->imagen);
+                $valor_p = Storage::url($d->candidato->partido->imagen);
+            }
+            $candidatos[]= ['nombre' => $d->candidato->nombre, 'id' => $d->candidato->id, 'imagen_candidato'=> $valor_c ,'imagen_partido'=>$valor_p] ;
         }
+
         return Response::json($candidatos, 200);
     }
     public function votacion (Request  $request){

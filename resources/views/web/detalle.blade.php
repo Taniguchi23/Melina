@@ -7,7 +7,7 @@
         data-stellar-background-ratio="0.5">
         <div class="overlay"></div>
         <div class="page-title">
-            <span>{{ $evento->created_at }}</span>
+            <span>{{ formato_fecha($evento->created_at) }}</span>
             <h2>{{ $distrito->nombre }} : {{$evento->titulo}}</h2>
         </div>
     </div>
@@ -78,7 +78,7 @@
                             <div class="col-7 paddding">
                                 <div class="most_fh5co_treding_font"> {{ $eve->titulo }}</div>
                                 <a href="/peru/{{ $distrito->region->url_seo }}/{{ $eve->slug }}/{{ $eve->fecha }}"><span
-                                        class="most_fh5co_treding_font_123">{{ $eve->created_at }}</span></a>
+                                        class="most_fh5co_treding_font_123">{{ formato_fecha($eve->created_at) }}</span></a>
                             </div>
                         </div>
                     @endforeach
@@ -286,11 +286,16 @@
 
         $.get("{{ url('/api/lista/' . $evento->id) }}", function(data, status) {
             for (var it of data) {
+
+                 var valor = "";
+                 if (it.imagen_candidato === null){
+                     valor = "none";
+                 }
                 var item =`
                     <tr id="votar-${it.id}" data-voto="${it.id}">
                     <td class="w-10"><input type="radio" class="option-input radio" id="radio-${it.id}" name="votar" value="${it.id}" /></td><td>${it.nombre}</td>
-                    <td class="w-80"><img src="https://i.pinimg.com/originals/c5/f5/b0/c5f5b093d6147305ab51eafa3bbd597c.jpg" class="img-candidato" alt="Sheep"></td>
-                    <td class="w-80"><img src="https://upload.wikimedia.org/wikipedia/commons/3/3c/Alianza_para_el_Progreso_Peru.svg" class="img-candidato" alt="Sheep"></td>
+                    <td class="w-80" ><img src="${it.imagen_candidato}" class="img-candidato" alt="Sheep"style="display: ${valor} " ></td>
+                    <td class="w-80"><img src="${it.imagen_partido}" class="img-candidato" alt="Sheep" style="display: ${valor}"></td>
                     </tr>`;
                 $('.lista-candidatos').append(item);
 
