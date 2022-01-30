@@ -15,3 +15,8 @@ mix.js('resources/js/app.js', 'public/js')
     .postCss('resources/css/app.css', 'public/css', [
         //
     ]);
+// mix.sass('assets/sass/style_1.scss', 'assets/css/style_1.css', {
+//     implementation: require('node-sass')
+// });
+
+mix.sass('public/assets/sass/style_1.scss', 'public/assets/css/style_1.css');
