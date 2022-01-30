@@ -12,11 +12,16 @@ use Illuminate\Http\Request;
 class WebController extends Controller
 {
     public function index (){
+        $eventos = [];
+        $distritos = Distrito::where('estado','A')->get();
+        foreach ($distritos as $distrito){
+            $eventos[] = [
+                'evento' => Evento::where('slug',$distrito->url_seo)->orderBy('created_at','desc')->first(),
+                'distrito' => $distrito,
+            ];
+        }
 
-        $datos = [
-            'eventos' => Evento::where('')
-        ];
-        return view('web.index');
+        return view('web.index', compact('eventos') );
     }
     public function eventos($region,$distrito){
         $r= Region::where('url_seo',$region)->first();
