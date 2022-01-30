@@ -31,7 +31,7 @@ class EventoController extends Controller
             $evento->slug = $distrito->url_seo;
             $evento->contenido = $request->contenido;
             $evento->descripcion = $request->descripcion;
-            $evento->imagen = $distrito->imagen;
+            $evento->imagen = 'public/distritos/'.$distrito->archivo;
             $evento->fecha = $request->fecha;
             $evento->save();
 
