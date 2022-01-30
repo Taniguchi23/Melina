@@ -25,7 +25,12 @@
                     @endforeach
 
 
+                    <a href="https://api.whatsapp.com/send?phone=+51958179714" target="_blank"><img src="/assets/images/banner-numero.png" style="width: 100%" alt=""></a>
                 </div>
+                {{-- <div class="col-md-8 animate-box" data-animate-effect="fadeInLeft">
+                </div> --}}
+
+
                 <div class="col-md-3 animate-box" data-animate-effect="fadeInRight">
                     <div>
                         <div class="fh5co_heading fh5co_heading_border_bottom py-2 mb-4">Tags</div>
