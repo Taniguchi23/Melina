@@ -3,7 +3,8 @@
 
 @section('content')
 
-    <div id="fh5co-title-box" style="background-image: url({{Storage::url($evento->imagen)}}); background-position: 50% 90.5px;"
+    {{-- <div id="fh5co-title-box" style="background-image: url({{Storage::url($evento->imagen)}}); background-position: 50% 0;" --}}
+    <div id="fh5co-title-box" style="background: url({{Storage::url($evento->imagen)}}) center center  fixed;background-size: cover;"
         data-stellar-background-ratio="0.5">
         <div class="overlay"></div>
         <div class="page-title">
@@ -285,12 +286,15 @@
     }
 
         $.get("{{ url('/api/lista/' . $evento->id) }}", function(data, status) {
-            for (var it of data) {
 
+            const newdata = data.sort((a,b) => (b.nombre == 'OTRO')? -1 : 1);
+
+            for (var it of newdata) {
                  var valor = "";
                  if (it.imagen_candidato === null){
                      valor = "none";
                  }
+                
                 var item =`
                     <tr id="votar-${it.id}" data-voto="${it.id}">
                     <td class="w-10"><input type="radio" class="option-input radio" id="radio-${it.id}" name="votar" value="${it.id}" /></td><td>${it.nombre}</td>
@@ -353,7 +357,7 @@
                     <td class="w-80"><img src="https://upload.wikimedia.org/wikipedia/commons/3/3c/Alianza_para_el_Progreso_Peru.svg" class="img-candidato" alt="Sheep"></td>
                     <td>
                         <div class="progress-element progress-element--${it.id}" ><p class="progress-label"><span>${it.votos} votos</span> <span><span class="count">${porc}</span>%</span></p><div class="progress-container">
-                        <div class="barra-votacion" style="background:red;width:0;height:20px" value="${porc}"></div></div></div>
+                        <div class="barra-votacion" style="background:#fff;width:0;height:20px" value="${porc}"></div></div></div>
                     </td>
                     </tr>`;
 

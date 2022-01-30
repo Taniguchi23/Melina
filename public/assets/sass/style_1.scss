@@ -846,7 +846,7 @@ a, a:hover {
 
 	.single & {
 		position: relative;
-		height: 700px;
+		height: 500px;
 		width: 100%;
 	}
 
@@ -874,12 +874,13 @@ a, a:hover {
 			color: white;
 			font-weight: 300;
 			.single & {
-				font-size: 72px;
+				font-size: 60px;
+				font-weight: 600;
 			}
 		}
 		> span {
 			display: block;
-			color: rgba(255,255,255,.5);
+			color: rgba(255,255,255,.8);
 			text-transform: uppercase;
 			font-size: 15px;
 			letter-spacing: .05em;
