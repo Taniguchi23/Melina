@@ -8,23 +8,21 @@
                     <div>
                         <div class="fh5co_heading fh5co_heading_border_bottom py-2 mb-4"></div>
                     </div>
+                    @foreach($eventos as $evento)
                     <div class="row pb-4">
                         <div class="col-md-5">
                             <div class="fh5co_hover_news_img">
-                                <div class="fh5co_news_img"><img src="images/nathan-mcbride-229637.jpg" alt=""/></div>
+                                <div class="fh5co_news_img"><img src="{{Storage::url($evento['evento']->imagen)}}" alt=""/></div>
                                 <div></div>
                             </div>
                         </div>
                         <div class="col-md-7 animate-box">
-                            <a href="single.html" class="fh5co_magna py-2"> Magna aliqua ut enim ad minim veniam quis
-                                nostrud quis xercitation ullamco. </a> <a href="#" class="fh5co_mini_time py-3"> Thomson Smith -
-                                April 18,2016 </a>
-                            <div class="fh5co_consectetur"> Amet consectetur adipisicing elit, sed do eiusmod tempor incididunt
-                                ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation.
+                            <a href="/peru/{{$evento['distrito']->region->url_seo}}/{{$evento['evento']->slug}}/{{$evento['evento']->fecha}}" class="fh5co_magna py-2"> {{$evento['distrito']->nombre}} : {{$evento['evento']->titulo}}</a><br> <a href="" class="fh5co_mini_time py-3"> <span>{{formato_fecha($evento['evento']->created_at)}}</span> </a>
+                            <div class="fh5co_consectetur"> {{$evento['evento']->contenido}}
                             </div>
                         </div>
                     </div>
-
+                    @endforeach
 
 
                 </div>
