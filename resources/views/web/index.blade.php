@@ -25,7 +25,12 @@
                     @endforeach
                     <!--prueba inicio -->
 
+                    <a href="https://api.whatsapp.com/send?phone=+51958179714" target="_blank"><img src="/assets/images/banner-numero.png" style="width: 100%" alt=""></a>
                 </div>
+                {{-- <div class="col-md-8 animate-box" data-animate-effect="fadeInLeft">
+                </div> --}}
+
+
                 <div class="col-md-3 animate-box" data-animate-effect="fadeInRight">
                     <div>
                         <div class="fh5co_heading fh5co_heading_border_bottom py-2 mb-4">Tags</div>
@@ -45,7 +50,7 @@
                         <a href="#" class="fh5co_tagg">Social</a>
                         <a href="#" class="fh5co_tagg">Three</a>
                     </div>
-                    <div>
+                    {{-- <div>
                         <div class="fh5co_heading fh5co_heading_border_bottom pt-3 py-2 mb-4">Most Popular</div>
                     </div>
                     <div class="row pb-3">
@@ -82,7 +87,7 @@
                             <div class="most_fh5co_treding_font"> Magna aliqua ut enim ad minim veniam quis nostrud.</div>
                             <div class="most_fh5co_treding_font_123"> April 18, 2016</div>
                         </div>
-                    </div>
+                    </div> --}}
                 </div>
             </div>
 
