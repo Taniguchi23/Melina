@@ -25,7 +25,7 @@
                     @endforeach
 
 
-                    <a href="https://api.whatsapp.com/send?phone=+51958179714" target="_blank"><img src="/assets/images/banner-numero.png" style="width: 100%" alt=""></a>
+                    {{-- <a href="https://api.whatsapp.com/send?phone=+51958179714" target="_blank"><img src="/assets/images/banner-numero.png" style="width: 100%" alt=""></a> --}}
                 </div>
                 {{-- <div class="col-md-8 animate-box" data-animate-effect="fadeInLeft">
                 </div> --}}
@@ -50,6 +50,8 @@
                         <a href="#" class="fh5co_tagg">Social</a>
                         <a href="#" class="fh5co_tagg">Three</a>
                     </div>
+
+                    <a href="https://api.whatsapp.com/send?phone=+51958179714" target="_blank"><img src="/assets/images/banner-numero-.png" style="width: 100%" alt=""></a>
                     {{-- <div>
                         <div class="fh5co_heading fh5co_heading_border_bottom pt-3 py-2 mb-4">Most Popular</div>
                     </div>
