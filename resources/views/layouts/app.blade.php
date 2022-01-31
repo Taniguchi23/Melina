@@ -51,10 +51,10 @@
                     <a class="fh5co_display_table"><div class="fh5co_verticle_middle"><i class="fa fa-google-plus"></i></div></a>
                 </div> --}}
                 <div class="text-center d-inline-block">
-                    <a href="https://twitter.com/fh5co" target="_blank" class="fh5co_display_table"><div class="fh5co_verticle_middle"><i class="fa fa-twitter"></i></div></a>
+                    <a href="https://www.facebook.com/Encuestas-Virtuales-102729698997472" target="_blank" class="fh5co_display_table"><div class="fh5co_verticle_middle"><i class="fa fa-twitter"></i></div></a>
                 </div>
                 <div class="text-center d-inline-block">
-                    <a href="https://fb.com/fh5co" target="_blank" class="fh5co_display_table"><div class="fh5co_verticle_middle"><i class="fa fa-facebook"></i></div></a>
+                    <a href="https://www.facebook.com/Encuestas-Virtuales-102729698997472" target="_blank" class="fh5co_display_table"><div class="fh5co_verticle_middle"><i class="fa fa-facebook"></i></div></a>
                 </div>
                 <!--<div class="d-inline-block text-center"><img src="images/country.png" alt="img" class="fh5co_country_width"/></div>-->
 
@@ -176,7 +176,7 @@
             <div class="col-12 col-md-6 py-4 Reserved"> © Copyright 2022, All rights reserved. Design by <a href="#" title="">Encuestas Virtuales</a>. </div>
             <div class="col-12 col-md-6 spdp_right py-4">
                 <a href="/" class="footer_last_part_menu">Inicio</a>
-                <a href="#" class="footer_last_part_menu">Contacto</a>
+                <a href="https://api.whatsapp.com/send?phone=+51958179714" class="footer_last_part_menu">Contacto</a>
 
         </div>
     </div>

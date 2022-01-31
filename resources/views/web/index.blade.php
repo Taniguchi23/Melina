@@ -31,7 +31,7 @@
                 </div> --}}
 
 
-                <div class="col-md-3 animate-box" data-animate-effect="fadeInRight">
+                <!--div class="col-md-3 animate-box" data-animate-effect="fadeInRight">
                     <div>
                         <div class="fh5co_heading fh5co_heading_border_bottom py-2 mb-4">Tags</div>
                     </div>
@@ -49,7 +49,7 @@
                         <a href="#" class="fh5co_tagg">Education</a>
                         <a href="#" class="fh5co_tagg">Social</a>
                         <a href="#" class="fh5co_tagg">Three</a>
-                    </div>
+                    </div-->
                     {{-- <div>
                         <div class="fh5co_heading fh5co_heading_border_bottom pt-3 py-2 mb-4">Most Popular</div>
                     </div>
