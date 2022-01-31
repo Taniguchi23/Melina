@@ -39,6 +39,7 @@ class DistritoController extends Controller
         $distrito->nombre = $request->nombre;
         $distrito->url_seo = $request->url_seo;
         $distrito->region_id = $request->region_id;
+        $distrito->estado = $request->estado;
         $distrito->save();
         return redirect()->route('distrito.index');
     }

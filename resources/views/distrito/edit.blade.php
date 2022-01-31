@@ -50,7 +50,14 @@
                                         @endforeach
                                     </select>
                                 </div>
+                                <div class="form-group">
+                                    <select name="estado" id="">
+                                        <option value="{{$distrito->estado}}">{{$distrito->estado}}</option>
+                                             <option value="A">Activo</option>
+                                             <option value="I">Inactivo</option>
 
+                                    </select>
+                                </div>
                                 <div class="row">
                                     <div class="col-12">
                                         <button type="submit" class="btn btn-success float-right" >Editar</button>

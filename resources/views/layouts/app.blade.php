@@ -24,7 +24,7 @@
     <div class="container">
         <div class="row">
             <div class="col-12 fh5co_mediya_center"><a href="#" class="color_fff fh5co_mediya_setting"><i
-                        class="fa fa-clock-o"></i>&nbsp;&nbsp;&nbsp;Friday, 5 January 2018</a>
+                        class="fa fa-clock-o"></i>&nbsp;&nbsp;{{formato_fecha_inicio()}}</a>
                 <div class="d-inline-block fh5co_trading_posotion_relative"><a href="https://api.whatsapp.com/send?phone=+51958179714" target="_blank"  class="treding_btn">¿Tu candidatos no aparece? Contáctate al Whatsapp: 958 179 714</a>
 
                     <div class="fh5co_treding_position_absolute"></div>
@@ -51,10 +51,10 @@
                     <a class="fh5co_display_table"><div class="fh5co_verticle_middle"><i class="fa fa-google-plus"></i></div></a>
                 </div> --}}
                 <div class="text-center d-inline-block">
-                    <a href="https://twitter.com/fh5co" target="_blank" class="fh5co_display_table"><div class="fh5co_verticle_middle"><i class="fa fa-twitter"></i></div></a>
+                    <a href="https://www.facebook.com/Encuestas-Virtuales-102729698997472" target="_blank" class="fh5co_display_table"><div class="fh5co_verticle_middle"><i class="fa fa-twitter"></i></div></a>
                 </div>
                 <div class="text-center d-inline-block">
-                    <a href="https://fb.com/fh5co" target="_blank" class="fh5co_display_table"><div class="fh5co_verticle_middle"><i class="fa fa-facebook"></i></div></a>
+                    <a href="https://www.facebook.com/Encuestas-Virtuales-102729698997472" target="_blank" class="fh5co_display_table"><div class="fh5co_verticle_middle"><i class="fa fa-facebook"></i></div></a>
                 </div>
                 <!--<div class="d-inline-block text-center"><img src="images/country.png" alt="img" class="fh5co_country_width"/></div>-->
 
@@ -176,7 +176,7 @@
             <div class="col-12 col-md-6 py-4 Reserved"> © Copyright 2022, All rights reserved. Design by <a href="#" title="">Encuestas Virtuales</a>. </div>
             <div class="col-12 col-md-6 spdp_right py-4">
                 <a href="/" class="footer_last_part_menu">Inicio</a>
-                <a href="#" class="footer_last_part_menu">Contacto</a>
+                <a href="https://api.whatsapp.com/send?phone=+51958179714" class="footer_last_part_menu">Contacto</a>
 
         </div>
     </div>
