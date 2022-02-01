@@ -47,7 +47,9 @@
                                     <div class="form-group">
                                         <input type="text" class="form-control" name="fecha" placeholder="Fecha seo: enero-2022" required>
                                     </div>
-
+                                    <div class="form-group">
+                                        <input type="date" class="form-control" name="fecha_cierre" required>
+                                    </div>
 
                                 </div>
                                 <!-- /.card-body -->

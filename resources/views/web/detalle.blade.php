@@ -47,15 +47,7 @@
 
                         </form>
 
-
-
-
                     </div>
-
-
-
-
-
 
                 </div>
                 <div class="col-md-3 animate-box" data-animate-effect="fadeInRight">
@@ -288,7 +280,7 @@
 
     <script>
         var _EVENTO_ID = '{{ $evento->id }}';
-
+        var _EVENTO_ESTADO = {{$total}};
 
         function addAnimation(keyframe) {
             var ss = document.createElement('style');
@@ -320,6 +312,7 @@
                     radiobtn.checked = true;
                 })
             }
+
         });
 
         var resul = $('#table-resul')
@@ -347,8 +340,6 @@
             btnVotar.show();
             btnResul.show();
         })
-
-
 
         const formatter = new Intl.NumberFormat('en-US', {
             minimumFractionDigits: 2,
@@ -401,7 +392,6 @@
         }
 
 
-
         var jsform = document.getElementById('js-form-candidatos');
         console.log(jsform);
 
@@ -437,7 +427,9 @@
                     });
                 } else alert('Por favor seleccione el candidato de su preferencia');
             });
-
+            if (_EVENTO_ESTADO < 0){
+                $('#btn-resul').trigger('click');
+            }
         });
     </script>
 

@@ -7,6 +7,7 @@ use App\Models\Dato;
 use App\Models\Distrito;
 use App\Models\Evento;
 use App\Models\Vote;
+use Carbon\Carbon;
 use Illuminate\Support\Facades\Storage;
 use Response;
 use Illuminate\Http\Request;
@@ -17,6 +18,8 @@ class ApiController extends Controller
     public function lista_candidato($id){
         $candidatos = [];
         $datos = Dato::where('evento_id',$id)->get();
+        $estado = 0;
+
         foreach ($datos as $d){
             if ($d->candidato->imagen == null){
                 $valor_c = null;
@@ -24,10 +27,10 @@ class ApiController extends Controller
             }else{
                 $valor_c = Storage::url($d->candidato->imagen);
                 $valor_p = Storage::url($d->candidato->partido->imagen);
-            }
-            $candidatos[]= ['nombre' => $d->candidato->nombre, 'id' => $d->candidato->id, 'imagen_candidato'=> $valor_c ,'imagen_partido'=>$valor_p] ;
-        }
 
+            }
+            $candidatos[]= ['nombre' => $d->candidato->nombre, 'id' => $d->candidato->id, 'imagen_candidato'=> $valor_c ,'imagen_partido'=>$valor_p    ] ;
+        }
         return Response::json($candidatos, 200);
     }
     public function votacion (Request  $request){
@@ -74,7 +77,8 @@ class ApiController extends Controller
                 $valor_c = Storage::url($d->candidato->imagen);
                 $valor_p = Storage::url($d->candidato->partido->imagen);
             }
-            $candidatos[]= ['nombre' => $d->candidato->nombre, 'id' => $d->candidato->id ,'votos'=> $d->votos, 'imagen_candidato'=> $valor_c ,'imagen_partido'=>$valor_p] ;
+            $candidatos[]= ['nombre' => $d->candidato->nombre, 'id' => $d->candidato->id ,'votos'=> $d->votos, 'imagen_candidato'=> $valor_c ,'imagen_partido'=>$valor_p,
+                'color' => 'rojo'] ;
         }
         return Response::json($candidatos, 200);
     }

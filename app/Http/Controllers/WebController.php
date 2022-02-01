@@ -7,6 +7,7 @@ use App\Models\Dato;
 use App\Models\Distrito;
 use App\Models\Evento;
 use App\Models\Region;
+use Carbon\Carbon;
 use Illuminate\Http\Request;
 
 class WebController extends Controller
@@ -32,7 +33,6 @@ class WebController extends Controller
 
         $dato = [
             'eventos' => $eventos,
-
             'e' => Evento::where('slug',$distrito)->orderBy('created_at','desc')->get(),
             'distritos' => Distrito::where('region_id',$r->id)->get(),
             'distrito' => Distrito::where('url_seo',$distrito)->first(),
@@ -42,6 +42,11 @@ class WebController extends Controller
     public function detalle($region,$distrito, $fecha){
         $r= Region::where('url_seo',$region)->first();
       $evento = Evento::where('slug',$distrito)->where('fecha',$fecha)->first();
+
+        $fecha_cierre = strtotime($evento->fecha_cierre);
+        $fecha_hoy = strtotime(Carbon::now());
+
+
       $distrito_nombre= Distrito::where('url_seo',$distrito)->first();
 
 
@@ -55,12 +60,13 @@ class WebController extends Controller
           'distrito' => Distrito::where('url_seo',$distrito)->first(),
           'distritos' => Distrito::where('region_id',$r->id)->get(),
           'candidatos' => $candidatos,
+          'total' =>  $fecha_cierre-$fecha_hoy,
       ];
 
       return view('web.detalle',$dato);
     }
 
     public function error (){
-        return view('web.error');
+        return redirect()->route('index');
     }
 }

@@ -33,6 +33,7 @@ class EventoController extends Controller
             $evento->descripcion = $request->descripcion;
             $evento->imagen = 'public/distritos/'.$distrito->archivo;
             $evento->fecha = $request->fecha;
+            $evento->fecha_cierre = $request->fecha_cierre;
             $evento->save();
 
             $candidatos = Candidato::where('distrito_id',$distrito->id)->get();
