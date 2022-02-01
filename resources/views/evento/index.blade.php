@@ -17,6 +17,7 @@
                 </div>
             </div><!-- /.container-fluid -->
         </section>
+
         <div class="row p-3">
             <div class="col-12">
                 <a class="btn btn-success float-right" href="{{route('evento.create')}}">Nuevo Evento</a>
@@ -118,3 +119,4 @@
         <!-- /.content -->
     </div>
 @endsection
+

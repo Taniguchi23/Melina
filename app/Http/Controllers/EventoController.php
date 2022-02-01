@@ -90,4 +90,6 @@ class EventoController extends Controller
         $evento->delete();
         return redirect()->route('evento.index');
     }
+
+
 }

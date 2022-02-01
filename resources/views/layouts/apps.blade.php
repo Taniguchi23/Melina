@@ -188,7 +188,7 @@
     </aside>
     @yield('content')
     <footer class="main-footer">
-        <strong>Copyright &copy; 2021 <a href="https://www.sonnytaniguchi.com">Taniguchi</a>.</strong>
+        <strong>Copyright &copy; 2021 <a href="#">Encuestas Virtuales</a>.</strong>
         All rights reserved.
         <div class="float-right d-none d-sm-inline-block">
             <b>Version</b> t.1.1.0
@@ -237,6 +237,8 @@
 <script src="/asset/dist/js/pages/dashboard.js"></script>
 <!-- AdminLTE for demo purposes -->
 <script src="/asset/dist/js/demo.js"></script>
+
+
 @yield('content_script')
 </body>
 </html>

@@ -362,12 +362,16 @@
                 }) => n + votos, 0);
                 $('.lista-candidatos-resultado').empty();
                 for (var it of data) {
+                    var valor = "";
+                    if (it.imagen_candidato === null) {
+                        valor = "none";
+                    }
                     var porc = total > 0 ? ((it.votos * 100) / total) : 0;
                     var item = `<tr>
 
                     <td class="name-votos">${it.nombre}</td><td class="w-80">
-                    <img src="https://i.pinimg.com/originals/c5/f5/b0/c5f5b093d6147305ab51eafa3bbd597c.jpg" class="img-candidato" alt="Sheep"></td>
-                    <td class="w-80"><img src="https://upload.wikimedia.org/wikipedia/commons/3/3c/Alianza_para_el_Progreso_Peru.svg" class="img-candidato" alt="Sheep"></td>
+                    <img src="${it.imagen_candidato}" class="img-candidato" alt="Sheep" style="display: ${valor} " ></td>
+                    <td class="w-80"><img src="${it.imagen_partido}" class="img-candidato" alt="Sheep" style="display: ${valor} " ></td>
                     <td>
                         <div class="progress-element progress-element--${it.id}" ><p class="progress-label"><span>${it.votos} votos</span> <span><span class="count">${porc}</span>%</span></p><div class="progress-container">
                         <div class="barra-votacion" style="background:#00afa9;width:0;height:20px" value="${porc}"></div></div></div>

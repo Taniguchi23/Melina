@@ -67,7 +67,14 @@ class ApiController extends Controller
           //  $total += $d->votos;
         //}
         foreach ($datos as $d){
-            $candidatos[]= ['nombre' => $d->candidato->nombre, 'id' => $d->candidato->id ,'votos'=> $d->votos] ; //,'porcentaje'=> round(($d->votos/$total)*100,1)
+            if ($d->candidato->imagen == null){
+                $valor_c = null;
+                $valor_p = null;
+            }else{
+                $valor_c = Storage::url($d->candidato->imagen);
+                $valor_p = Storage::url($d->candidato->partido->imagen);
+            }
+            $candidatos[]= ['nombre' => $d->candidato->nombre, 'id' => $d->candidato->id ,'votos'=> $d->votos, 'imagen_candidato'=> $valor_c ,'imagen_partido'=>$valor_p] ;
         }
         return Response::json($candidatos, 200);
     }

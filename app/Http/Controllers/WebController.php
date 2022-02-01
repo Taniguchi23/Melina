@@ -26,6 +26,10 @@ class WebController extends Controller
     public function eventos($region,$distrito){
         $r= Region::where('url_seo',$region)->first();
         $eventos = Evento::where('slug',$distrito)->orderBy('created_at','desc')->get();
+        if ($r == null || !$eventos->isNotEmpty() ){
+            return redirect()->route('web.error');
+        }
+
         $dato = [
             'eventos' => $eventos,
 
@@ -39,6 +43,11 @@ class WebController extends Controller
         $r= Region::where('url_seo',$region)->first();
       $evento = Evento::where('slug',$distrito)->where('fecha',$fecha)->first();
       $distrito_nombre= Distrito::where('url_seo',$distrito)->first();
+
+
+        if ($r == null || $evento== null || $distrito_nombre == null){
+            return redirect()->route('web.error');
+        }
       $candidatos = Candidato::where('distrito_id',$distrito_nombre->id)->get();
       $dato = [
           'evento' => $evento,
@@ -49,5 +58,9 @@ class WebController extends Controller
       ];
 
       return view('web.detalle',$dato);
+    }
+
+    public function error (){
+        return view('web.error');
     }
 }
