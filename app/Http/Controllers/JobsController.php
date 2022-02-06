@@ -17,7 +17,7 @@ class JobsController extends Controller
         $anio = date("Y", $fecha_normal);
         $mes = ["enero", "febrero", "marzo", "junio","julio","agosto","setiembre","noviembre","diciembre"];
         $fecha_slug = $mes[$mes_numero].'-'.$anio;
-        $random = rand(40,80);
+        $random = rand(15,40);
 
         $eventos = Evento::where('fecha',$fecha_slug)->get();
         if ($eventos->isnotempty()){
