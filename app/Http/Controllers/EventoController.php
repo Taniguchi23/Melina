@@ -14,11 +14,11 @@ use Symfony\Component\Mime\Encoder\EightBitContentEncoder;
 class EventoController extends Controller
 {
     public function index(){
-       $eventos = Evento::all();
-       return view('evento.index', compact('eventos'));
+        $eventos = Evento::all();
+        return view('evento.index', compact('eventos'));
     }
     public function create(){
-       return view('evento.create');
+        return view('evento.create');
     }
     public function store(Request $request){
         $valor = Evento::all();
@@ -53,31 +53,31 @@ class EventoController extends Controller
             }
         }
 
-       return redirect()->route('evento.index');
+        return redirect()->route('evento.index');
     }
     public  function  edit_all(){
 
     }
     public function edit($id){
         $evento = Evento::find($id);
-         //public/distrito/ = 16
-         $datos = [
-             'evento' => $evento,
-         ];
+        //public/distrito/ = 16
+        $datos = [
+            'evento' => $evento,
+        ];
 
-         return view('evento.edit', $datos);
+        return view('evento.edit', $datos);
     }
     public function update(Request $request, $id){
-      //  $request->imagen = "public/distrito/".$request->imagen.".png";
+        //  $request->imagen = "public/distrito/".$request->imagen.".png";
         $evento = Evento::find($id);
         if(isset($request->imagen)){
-           if ($evento->estado=='N'){
-               $evento->imagen = $request->file('imagen')->store('public/resultados');
-               $evento->estado = 'E';
-           }else{
-               Storage::delete($evento->imagen);
-               $evento->imagen = $request->file('imagen')->store('public/resultados');
-           }
+            if ($evento->estado=='N'){
+                $evento->imagen_resultado = $request->file('imagen')->store('public/resultados');
+                $evento->estado = 'E';
+            }else{
+                Storage::delete($evento->imagen);
+                $evento->imagen_resultado = $request->file('imagen')->store('public/resultados');
+            }
         }
         $evento->titulo = $request->titulo;
         $evento->slug = $request->slug;

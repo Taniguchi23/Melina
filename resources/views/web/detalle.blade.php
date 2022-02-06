@@ -5,8 +5,8 @@
 
     {{-- <div id="fh5co-title-box" style="background-image: url({{Storage::url($evento->imagen)}}); background-position: 50% 0;" --}}
     <div id="fh5co-title-box"
-        style="background: url({{ Storage::url($evento->imagen) }}) center center  fixed;background-size: cover;"
-        data-stellar-background-ratio="0.5">
+         style="background: url({{ Storage::url($evento->imagen) }}) center center  fixed;background-size: cover;"
+         data-stellar-background-ratio="0.5">
         <div class="overlay"></div>
         <div class="page-title">
             <span>{{ formato_fecha($evento->created_at) }}</span>
@@ -18,11 +18,22 @@
         <div class="container paddding">
             <div class="row mx-0">
                 <div class="col-md-8 animate-box" data-animate-effect="fadeInLeft">
-                    <!-- <h3>{{ $distrito->nombre }} : Encuesta Virtual </h3> -->
-                    <!-- <img src="{{ Storage::url($evento->imagen) }}" alt="img" class="img-fluid"> -->
-                    <!-- <h5>{{ $evento->created_at }}</h5> -->
+                <!-- <h3>{{ $distrito->nombre }} : Encuesta Virtual </h3> -->
+                <!-- <img src="{{ Storage::url($evento->imagen) }}" alt="img" class="img-fluid"> -->
+                <!-- <h5>{{ $evento->created_at }}</h5> -->
                     <p>{{ $evento->descripcion }}</p>
-                    <!-- <h2> {{ $evento->contenido }}</h2> -->
+                <!-- <h2> {{ $evento->contenido }}</h2> -->
+
+                    <span> Los votos fueron estrictos, es decir, 1 voto por IP + cookie, evitando el voto mÃºltiple.<br><br>
+
+		                <strong>NOTA IMPORTANTE:</strong><br>
+		            La presente encuesta refleja las preferencias del segmento â€œUsuarios de Internetâ€.
+		            Los usuarios de Internet son juventud, universidades y gente muy influyente en redes sociales. </span>
+                    @if($evento->imagen_resultado != null){
+                    <img src="{{ Storage::url($evento->imagen_resultado) }}" alt="img" class="img-fluid">
+                    }
+                    @endif
+
                     <div class="encuesta-votacion">
 
                         <form id="js-form-candidatos">
@@ -59,11 +70,11 @@
                     <div class="fh5co_tags_all">
                         @foreach ($distritos as $d)
                             <a href="/peru/{{ $d->region->url_seo }}/{{ $d->url_seo }}"
-                                class="fh5co_tagg">{{ $d->nombre }}</a>
+                               class="fh5co_tagg">{{ $d->nombre }}</a>
                         @endforeach
                     </div>
                     <div>
-                        <div class="fh5co_heading fh5co_heading_border_bottom pt-3 py-2 mb-4">Últimas Encuestas</div>
+                        <div class="fh5co_heading fh5co_heading_border_bottom pt-3 py-2 mb-4">Ãšltimas Encuestas</div>
                     </div>
                     @foreach ($e as $eve)
                         <div class="row pb-3">
@@ -132,7 +143,7 @@
             transition: all 0.15s ease-out 0s;
             background: lightgray;
             border: 2px solid darkgray;
-            ;
+        ;
             color: #fff;
             cursor: pointer;
             display: inline-block;
