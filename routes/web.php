@@ -19,6 +19,7 @@ Route::get('/peru/{region}/{distrito}',[WebController::class,'eventos']);
 Route::get('/peru/{region}/{distrito}/{fecha}',[WebController::class,'detalle']);
 Route::get('/jobs/diario',[JobsController::class,'job']);
 Route::get('/jobs/primero',[JobsController::class,'firstJob']);
+Route::get('imagen',[WebController::class,'edit_all']);
 Route::get('/llacta', function (){
     Artisan::call('storage:link');
 });

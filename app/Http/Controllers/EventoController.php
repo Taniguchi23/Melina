@@ -55,9 +55,7 @@ class EventoController extends Controller
 
         return redirect()->route('evento.index');
     }
-    public  function  edit_all(){
 
-    }
     public function edit($id){
         $evento = Evento::find($id);
         //public/distrito/ = 16

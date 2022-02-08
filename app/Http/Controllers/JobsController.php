@@ -18,7 +18,6 @@ class JobsController extends Controller
         $mes = ["enero", "febrero", "marzo", "junio","julio","agosto","setiembre","noviembre","diciembre"];
         $fecha_slug = $mes[$mes_numero].'-'.$anio;
         $random = rand(15,40);
-
         $eventos = Evento::where('fecha',$fecha_slug)->get();
         if ($eventos->isnotempty()){
             foreach ($eventos as $evento){
@@ -31,7 +30,7 @@ class JobsController extends Controller
                     $porcentaje_nuevo = round(($d->votos*100)/$contenedor);
                     $voto_diario = round(($random*$porcentaje_nuevo)/100);
                     if ($voto_diario == 0){
-                        $voto_diario = 3;
+                        $voto_diario = rand(3,5);
                     }
                     $d->votos = $d->votos + $voto_diario;
                     $d->save();

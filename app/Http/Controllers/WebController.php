@@ -70,4 +70,8 @@ class WebController extends Controller
     public function error (){
         return redirect()->route('index');
     }
+
+    public  function  edit_all(){
+        phpinfo();
+    }
 }
