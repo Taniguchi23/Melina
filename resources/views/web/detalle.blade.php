@@ -49,6 +49,11 @@
 
                     </div>
 
+
+                    {{-- <div style="width: 100%">
+                        <div id="canvas"></div>
+                    </div> --}}
+
                 </div>
                 <div class="col-md-3 animate-box" data-animate-effect="fadeInRight">
                     <div>
@@ -83,6 +88,8 @@
             </div>
         </div>
     </div>
+
+
 
     <style>
         .table-candidato td {
@@ -208,13 +215,13 @@
 
 
         /* progress {
-                opacity: 0;
-            } */
+                    opacity: 0;
+                } */
 
         /* .progress-element {
-                width: 200px;
-                margin: 0 0 10px;
-            } */
+                    width: 200px;
+                    margin: 0 0 10px;
+                } */
 
         .progress-container {
             position: relative;
@@ -225,24 +232,24 @@
         }
 
         /* .progress-container::before {
-                content: "";
-                position: absolute;
-                top: 0;
-                left: 0;
-                height: 100%;
-                width: 0;
-                background: turquoise;
-            } */
+                    content: "";
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    height: 100%;
+                    width: 0;
+                    background: turquoise;
+                } */
 
         /* .progress-element--html .progress-container::before {
-                animation: progress-html 1s ease-in forwards;
-            } */
+                    animation: progress-html 1s ease-in forwards;
+                } */
 
         /* @keyframes progress-html {
-                to {
-                    width: 45%;
-                }
-            } */
+                    to {
+                        width: 45%;
+                    }
+                } */
 
         .progress-label {
             font-size: 14px !important;
@@ -252,35 +259,113 @@
         }
 
         /*
-            @property --num {
-                syntax: "<integer>";
-                initial-value: 0;
-                inherits: false;
-            } */
+                @property --num {
+                    syntax: "<integer>";
+                    initial-value: 0;
+                    inherits: false;
+                } */
 
         /* .progress-label::after {
-                counter-reset: num var(--num);
-                content: counter(num) "%";
-                position: absolute;
-                top: 0;
-                right: 0;
-            } */
+                    counter-reset: num var(--num);
+                    content: counter(num) "%";
+                    position: absolute;
+                    top: 0;
+                    right: 0;
+                } */
 
         /* .progress-element--html .progress-label::after {
-                animation: progress-text-html 1s ease-in forwards;
-            }
-
-            @keyframes progress-text-html {
-                to {
-                    --num: 45;
+                    animation: progress-text-html 1s ease-in forwards;
                 }
-            } */
+
+                @keyframes progress-text-html {
+                    to {
+                        --num: 45;
+                    }
+                } */
 
     </style>
 
+    {{-- <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js"></script> --}}
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/c3/0.4.10/c3.min.css" rel="stylesheet" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.6/d3.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/c3/0.4.10/c3.min.js"></script>
+
+
+
+    <script>
+        const setBg = () => '#' + Math.floor(Math.random() * 16777215).toString(16);
+
+        $.get("{{ url('/api/resultados/' . $evento->id) }}", function(data, status) {
+            console.log(data)
+
+            let dataFilter = data.filter(elm => (elm.votos > 1) ? true : false);
+
+            let nameMap = dataFilter.map(elm => elm.nombre)
+            let votosMap = dataFilter.map(elm => elm.votos)
+
+            let colorMap = dataFilter.map(elm => setBg())
+            
+            let votosName = nameMap.map((elm, index) => [elm, votosMap[index]])
+            console.log(votosName)
+
+            console.log(votosMap)
+
+
+
+            // var ctx = document.getElementById("canvas").getContext("2d");
+            // var myBar = new Chart(ctx, {
+            //   type: 'bar',
+            //   data: {
+            //     labels: nameMap,
+            //     datasets: [{
+            //       label: 'Fuel',
+            //       backgroundColor: colorMap,
+            //       borderColor: colorMap,
+            //       data: votosMap
+            //     }]
+            //   },
+            //   options: {
+            //     title: {
+            //       display: true,
+            //       text: "Candidatos de {{ $distrito->nombre }}"
+            //     },
+            //     tooltips: {
+            //       mode: 'index',
+            //       intersect: false
+            //     },
+            //     legend: {
+            //       display: false,
+            //     },
+            //     responsive: true,
+            //   }
+            // });
+
+        //     var chart = c3.generate({
+        //         bindto: '#canvas',
+        //         data: {
+        //             columns: votosName,
+        //             type: 'bar',
+        //             colors: {
+        //                 data1: '#ff0000',
+        //                 data2: '#111',
+        //                 data3: '#aaa'
+        //             },
+        //         },
+        //         bar: {
+        //             width: {
+        //                 ratio: 0.97
+        //             },
+        //         }
+        //     });
+
+
+
+        // })
+    </script>
+
     <script>
         var _EVENTO_ID = '{{ $evento->id }}';
-        var _EVENTO_ESTADO = {{$total}};
+        var _EVENTO_ESTADO = {{ $total }};
 
         function addAnimation(keyframe) {
             var ss = document.createElement('style');
@@ -427,7 +512,7 @@
                     });
                 } else alert('Por favor seleccione el candidato de su preferencia');
             });
-            if (_EVENTO_ESTADO < 0){
+            if (_EVENTO_ESTADO < 0) {
                 $('#btn-resul').trigger('click');
             }
         });
