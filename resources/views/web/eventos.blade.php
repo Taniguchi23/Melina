@@ -12,7 +12,14 @@
                         <div class="row pb-4">
                             <div class="col-md-5">
                                 <div class="fh5co_hover_news_img">
-                                    <div class="fh5co_news_img"><img src="{{Storage::url($evento->imagen)}}" alt=""/></div>
+                                    <div class="fh5co_news_img">
+                                        @if($evento->imagen_resultado == null)
+                                            <img src="{{Storage::url($evento->imagen)}}" alt=""/>
+                                        @else
+                                            <img src="{{Storage::url($evento->imagen_resultado)}}" alt=""/>
+                                        @endif
+
+                                    </div>
                                     <div></div>
                                 </div>
                             </div>
@@ -35,11 +42,11 @@
                     <div class="clearfix"></div>
                     <div class="fh5co_tags_all">
                         @foreach($distritos as $d)
-                        <a href="/peru/{{$d->region->url_seo}}/{{$d->url_seo}}" class="fh5co_tagg">{{$d->nombre}}</a>
+                            <a href="/peru/{{$d->region->url_seo}}/{{$d->url_seo}}" class="fh5co_tagg">{{$d->nombre}}</a>
                         @endforeach
                     </div>
                     <div>
-                        <div class="fh5co_heading fh5co_heading_border_bottom pt-3 py-2 mb-4">Últimas Encuestas</div>
+                        <div class="fh5co_heading fh5co_heading_border_bottom pt-3 py-2 mb-4">Ãšltimas Encuestas</div>
                     </div>
                     @foreach($e as $eve)
                         <div class="row pb-3">

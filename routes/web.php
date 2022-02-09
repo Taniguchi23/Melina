@@ -10,20 +10,29 @@ use App\Http\Controllers\EventoController;
 use App\Http\Controllers\ApiController;
 use App\Http\Controllers\PartidoController;
 use Illuminate\Support\Facades\Artisan;
+use App\Http\Controllers\JobsController;
 
 
 //web
 Route::get('/',[WebController::class,'index'])->name('index');
 Route::get('/peru/{region}/{distrito}',[WebController::class,'eventos']);
 Route::get('/peru/{region}/{distrito}/{fecha}',[WebController::class,'detalle']);
+Route::get('/jobs/diario',[JobsController::class,'job']);
+Route::get('/jobs/primero',[JobsController::class,'firstJob']);
+Route::get('imagen',[WebController::class,'edit_all']);
 Route::get('/llacta', function (){
     Artisan::call('storage:link');
+});
+Route::get('/monse',[ApiController::class,'geoip']);
+Route::get('/geoip',function (){
+   $geoipInfo = geoip()->getLocation($_SERVER['REMOTE_ADDR']);
+   return $geoipInfo->toArray();
 });
 Route::get('/error',[WebController::class,'error'])->name('web.error');
 Route::get('/api/lista/{id}',[ApiController::class, 'lista_candidato'])->name('api.lista');
 Route::post('/api/votacion',[ApiController::class,'votacion'])->withoutMiddleware([\App\Http\Middleware\VerifyCsrfToken::class]);
 Route::get('/api/resultados/{id}',[ApiController::class, 'resultado'])->name('api.lista');
-
+Route::get('/prueba',[WebController::class,'prueba']);
 Auth::routes();
 Route::group(['middleware'=> 'auth'], function (){
     Route::get('/home', [AdminController::class, 'index'])->name('home');

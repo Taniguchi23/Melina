@@ -22,6 +22,7 @@ class WebController extends Controller
             ];
         }
 
+
         return view('web.index', compact('eventos') );
     }
     public function eventos($region,$distrito){
@@ -41,32 +42,36 @@ class WebController extends Controller
     }
     public function detalle($region,$distrito, $fecha){
         $r= Region::where('url_seo',$region)->first();
-      $evento = Evento::where('slug',$distrito)->where('fecha',$fecha)->first();
+        $evento = Evento::where('slug',$distrito)->where('fecha',$fecha)->first();
 
         $fecha_cierre = strtotime($evento->fecha_cierre);
         $fecha_hoy = strtotime(Carbon::now());
 
 
-      $distrito_nombre= Distrito::where('url_seo',$distrito)->first();
+        $distrito_nombre= Distrito::where('url_seo',$distrito)->first();
 
 
         if ($r == null || $evento== null || $distrito_nombre == null){
             return redirect()->route('web.error');
         }
-      $candidatos = Candidato::where('distrito_id',$distrito_nombre->id)->get();
-      $dato = [
-          'evento' => $evento,
-          'e' => Evento::where('slug',$distrito)->orderBy('created_at','desc')->get(),
-          'distrito' => Distrito::where('url_seo',$distrito)->first(),
-          'distritos' => Distrito::where('region_id',$r->id)->get(),
-          'candidatos' => $candidatos,
-          'total' =>  $fecha_cierre-$fecha_hoy,
-      ];
+        $candidatos = Candidato::where('distrito_id',$distrito_nombre->id)->get();
+        $dato = [
+            'evento' => $evento,
+            'e' => Evento::where('slug',$distrito)->orderBy('created_at','desc')->get(),
+            'distrito' => Distrito::where('url_seo',$distrito)->first(),
+            'distritos' => Distrito::where('region_id',$r->id)->get(),
+            'candidatos' => $candidatos,
+            'total' =>  $fecha_cierre-$fecha_hoy,
+        ];
 
-      return view('web.detalle',$dato);
+        return view('web.detalle',$dato);
     }
 
     public function error (){
         return redirect()->route('index');
+    }
+
+    public  function  edit_all(){
+        phpinfo();
     }
 }

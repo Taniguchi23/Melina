@@ -19,7 +19,6 @@ class ApiController extends Controller
         $candidatos = [];
         $datos = Dato::where('evento_id',$id)->get();
         $estado = 0;
-
         foreach ($datos as $d){
             if ($d->candidato->imagen == null){
                 $valor_c = null;
@@ -33,10 +32,14 @@ class ApiController extends Controller
         }
         return Response::json($candidatos, 200);
     }
-    public function votacion (Request  $request){
 
+    public function votacion (Request  $request){
         $req = json_decode(file_get_contents("php://input"));
         $ip = $request->ip();
+        $geoip = geoip()->getLocation();
+        if($geoip['iso_code'] != "PE"){
+            return Response::json(['status' => 'error', 'message' => 'vuelve a votar en 24 horas'], 400);
+        }
 
         if(isset($req) && isset($ip)) {
             $vote = Vote::where('ip', $request->ip())->where('evento_id',$req->evento_id)->first();
@@ -62,12 +65,13 @@ class ApiController extends Controller
             }
         }
     }
+
     public function resultado($id){
         $total= 0;
         $candidatos = [];
         $datos = Dato::where('evento_id',$id)->orderByDesc('votos')->get();
         //foreach ($datos as $d){
-          //  $total += $d->votos;
+        //  $total += $d->votos;
         //}
         foreach ($datos as $d){
             if ($d->candidato->imagen == null){
@@ -82,4 +86,12 @@ class ApiController extends Controller
         }
         return Response::json($candidatos, 200);
     }
+
+    public function geoip(Request $request){
+        $ip = $request->ip();
+        $geoip = geoip()->getLocation();
+        dd($geoip);
+    }
+
+
 }
