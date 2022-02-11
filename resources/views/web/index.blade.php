@@ -3,13 +3,15 @@
 
     <div class="container-fluid pb-4 pt-4 paddding">
         <div class="container paddding">
+
             <div class="row mx-0">
-                <div class="col-md-8 animate-box" data-animate-effect="fadeInLeft">
-                    <div>
+                <div class="col-md-9 animate-box" data-animate-effect="fadeInLeft">
+                    {{-- <div>
                         <div class="fh5co_heading fh5co_heading_border_bottom py-2 mb-4"></div>
-                    </div>
+                    </div> --}}
+                    <div class="row">
                     @foreach($eventos as $evento)
-                        <div class="row pb-4">
+                        {{-- <div class="row pb-4">
                             <div class="col-md-5">
                                 <div class="fh5co_hover_news_img">
                                     <div class="fh5co_news_img"><img src="{{Storage::url($evento['evento']->imagen)}}" alt=""/></div>
@@ -21,14 +23,46 @@
                                 <div class="fh5co_consectetur"> {{$evento['evento']->contenido}}
                                 </div>
                             </div>
+                        </div> --}}
+
+                        <div class="col-lg-6 col-md-6">
+                        <a href="/peru/{{$evento['distrito']->region->url_seo}}/{{$evento['evento']->slug}}/{{$evento['evento']->fecha}}">
+                            <div class="single-what mb-100">
+                                <div class="what-img">
+                                    <img src="{{Storage::url($evento['evento']->imagen)}}" alt="">
+                                </div>
+                                <div class="what-cap">
+                                    <span class="color1">{{formato_fecha($evento['evento']->created_at)}}</span>
+                                    <h2> {{$evento['distrito']->nombre}} : {{$evento['evento']->titulo}}</h2>
+                                </div>
+                            </div>
+                        </a>
                         </div>
                     @endforeach
                 <!--prueba inicio -->
 
                     {{-- <a href="https://api.whatsapp.com/send?phone=+51958179714" target="_blank"><img src="/assets/images/banner-numero.png" style="width: 100%" alt=""></a> --}}
                 </div>
+                </div>
+
+
+                
                 <div class="col-md-3 animate-box" data-animate-effect="fadeInLeft">
-                    <a href="https://api.whatsapp.com/send?phone=+51958179714" target="_blank"><img src="/assets/images/banner-numero-.png" style="width: 100%" alt=""></a>
+                    <div>
+                        <div class="fh5co_heading fh5co_heading_border_bottom py-2 mb-4">Enero</div>
+                    </div>
+
+                    <div class="row pb-3">
+                        <div class="col-5 align-self-center">
+                            <img src="http://melina.test/storage/distritos/ancon-61f5cc07b280c.jpg" alt="img" class="fh5co_most_trading"/>
+                        </div>
+                        <div class="col-7 paddding">
+                            <div class="home__tag">ancón</div>
+                            <div class="most_fh5co_treding_font">Encuesta Virtual Febrero 2022</div>
+                        </div>
+                    </div>
+
+                    <a href="https://api.whatsapp.com/send?phone=+51958179714" target="_blank"><img src="/assets/images/banner-web_v2.png" style="width: 100%" alt=""></a>
                 </div>
 
 

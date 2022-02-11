@@ -26,19 +26,26 @@
             <div class="col-12 fh5co_mediya_center"><a href="#" class="color_fff fh5co_mediya_setting"><i
                         class="fa fa-clock-o"></i>&nbsp;&nbsp;{{formato_fecha_inicio()}}</a>
                 <div class="d-inline-block fh5co_trading_posotion_relative"><a href="https://api.whatsapp.com/send?phone=+51958179714" target="_blank"  class="treding_btn">¿Tu candidatos no aparece? Contáctate al Whatsapp: 958 179 714</a>
-
                     <div class="fh5co_treding_position_absolute"></div>
                 </div>
-                {{-- <a href="#" class="color_fff fh5co_mediya_setting">Instagram’s big redesign goes live with black-and-white app</a> --}}
+                {{-- <a href="#" class="color_fff fh5co_mediya_setting">Instagram’s big redesign goes live</a> --}}
+                <div>
+                    <div class="text-center d-inline-block justify-content-sm-end">
+                        <a href="https://www.facebook.com/Encuestas-Virtuales-102729698997472" target="_blank" class="fh5co_display_table"><div class="fh5co_verticle_middle"><i class="fa fa-twitter"></i></div></a>
+                    </div>
+                    <div class="text-center d-inline-block justify-content-sm-end">
+                        <a href="https://www.facebook.com/Encuestas-Virtuales-102729698997472" target="_blank" class="fh5co_display_table"><div class="fh5co_verticle_middle"><i class="fa fa-facebook"></i></div></a>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
 </div>
 <div class="container-fluid">
-    <div class="container">
+    <div class="container" style="margin: 30px auto;">
         <div class="row">
             <div class="col-12 col-md-3 fh5co_padding_menu">
-                <a href="/"><img src="/assets/images/logo.png" alt="img" class="fh5co_logo_width"/></a>
+                <a href="/"><img src="/assets/images/logo-svg.svg" alt="img" class="fh5co_logo_width"/></a>
             </div>
             <div class="col-12 col-md-9 align-self-center fh5co_mediya_right">
                 {{-- <div class="text-center d-inline-block">
@@ -50,13 +57,16 @@
                 {{-- <div class="text-center d-inline-block">
                     <a class="fh5co_display_table"><div class="fh5co_verticle_middle"><i class="fa fa-google-plus"></i></div></a>
                 </div> --}}
-                <div class="text-center d-inline-block">
+                {{-- <div class="text-center d-inline-block">
                     <a href="https://www.facebook.com/Encuestas-Virtuales-102729698997472" target="_blank" class="fh5co_display_table"><div class="fh5co_verticle_middle"><i class="fa fa-twitter"></i></div></a>
                 </div>
                 <div class="text-center d-inline-block">
                     <a href="https://www.facebook.com/Encuestas-Virtuales-102729698997472" target="_blank" class="fh5co_display_table"><div class="fh5co_verticle_middle"><i class="fa fa-facebook"></i></div></a>
-                </div>
+                </div> --}}
                 <!--<div class="d-inline-block text-center"><img src="images/country.png" alt="img" class="fh5co_country_width"/></div>-->
+                <div>
+                    <img src="/assets/images/banner-web_v2-v.png" alt="img"/>
+                </div>
 
                 <div class="clearfix"></div>
             </div>

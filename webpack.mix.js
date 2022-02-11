@@ -1,5 +1,10 @@
 const mix = require('laravel-mix');
 
+if ( ! mix.inProduction()) {
+    mix.webpackConfig({
+        devtool: 'inline-source-map'
+    })
+}
 /*
  |--------------------------------------------------------------------------
  | Mix Asset Management
@@ -19,4 +24,4 @@ mix.js('resources/js/app.js', 'public/js')
 //     implementation: require('node-sass')
 // });
 
-mix.sass('public/assets/sass/style_1.scss', 'public/assets/css/style_1.css');
+mix.sass('public/assets/sass/style_1.scss', 'public/assets/css/style_1.css').sourceMaps();;
