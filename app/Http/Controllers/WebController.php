@@ -14,16 +14,28 @@ class WebController extends Controller
 {
     public function index (){
         $eventos = [];
-        $distritos = Distrito::where('estado','A')->get();
+        $eventos_anteriores = [];
+        $distritos = Distrito::where('estado','A')->orderBy('id','desc')->get();
         foreach ($distritos as $distrito){
             $eventos[] = [
                 'evento' => Evento::where('slug',$distrito->url_seo)->orderBy('created_at','desc')->first(),
                 'distrito' => $distrito,
             ];
         }
+        $distritos_random = Distrito::inRandomOrder()->limit(5)->get();
+        foreach ($distritos_random as $d){
+            $eventos_anteriores[] = [
+                'evento' => Evento::where('slug',$d->url_seo)->first(),
+                'distrito' => $d,
+            ];
+        }
 
+        $datos = [
+            'eventos' => $eventos,
+            'eventos_anteriores' => $eventos_anteriores,
+        ];
 
-        return view('web.index', compact('eventos') );
+        return view('web.index', $datos );
     }
     public function eventos($region,$distrito){
         $r= Region::where('url_seo',$region)->first();

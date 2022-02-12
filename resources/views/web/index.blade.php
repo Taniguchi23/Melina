@@ -32,7 +32,7 @@
                                     <img src="{{Storage::url($evento['evento']->imagen)}}" alt="">
                                 </div>
                                 <div class="what-cap">
-                                    <span class="color1">{{formato_fecha($evento['evento']->created_at)}}</span>
+                                    <span class="color1">{{$evento['distrito']->region->nombre}}</span>
                                     <h2> {{$evento['distrito']->nombre}} : {{$evento['evento']->titulo}}</h2>
                                 </div>
                             </div>
@@ -46,22 +46,22 @@
                 </div>
 
 
-                
+
                 <div class="col-md-3 animate-box" data-animate-effect="fadeInLeft">
                     <div>
-                        <div class="fh5co_heading fh5co_heading_border_bottom py-2 mb-4">Enero</div>
+                        <div class="fh5co_heading fh5co_heading_border_bottom py-2 mb-4"> {{mes_anterior_nombre()}}</div>
                     </div>
-
-                    <div class="row pb-3">
-                        <div class="col-5 align-self-center">
-                            <img src="http://melina.test/storage/distritos/ancon-61f5cc07b280c.jpg" alt="img" class="fh5co_most_trading"/>
+                    @foreach($eventos_anteriores as $evento_anterior)
+                        <a href="/peru/{{$evento_anterior['distrito']->region->url_seo}}/{{$evento_anterior['evento']->slug}}/{{$evento_anterior['evento']->fecha}}">  <div class="row pb-3">
+                         <div class="col-5 align-self-center">
+                            <img src="{{Storage::url($evento_anterior['evento']->imagen)}}" alt="img" class="fh5co_most_trading"/>
                         </div>
-                        <div class="col-7 paddding">
-                            <div class="home__tag">ancón</div>
-                            <div class="most_fh5co_treding_font">Encuesta Virtual Febrero 2022</div>
+                         <div class="col-7 paddding">
+                            <div class="home__tag" style="background-color: {{color($evento_anterior['distrito']->region->nombre)}}">{{$evento_anterior['distrito']->region->url_seo}}</div>
+                            <div class="most_fh5co_treding_font">{{$evento_anterior['distrito']->nombre}}</div>
                         </div>
-                    </div>
-
+                    </div></a>
+                    @endforeach
                     <a href="https://api.whatsapp.com/send?phone=+51958179714" target="_blank"><img src="/assets/images/banner-web_v2.png" style="width: 100%" alt=""></a>
                 </div>
 
