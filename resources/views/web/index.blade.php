@@ -32,7 +32,7 @@
                                     <img src="{{Storage::url($evento['evento']->imagen)}}" alt="">
                                 </div>
                                 <div class="what-cap">
-                                    <span class="color1">{{$evento['distrito']->region->nombre}}</span>
+                                    <span class="color1" style="background-color: {{color($evento['distrito']->region->nombre)}}">{{$evento['distrito']->region->nombre}}</span>
                                     <h2> {{$evento['distrito']->nombre}} : {{$evento['evento']->titulo}}</h2>
                                 </div>
                             </div>

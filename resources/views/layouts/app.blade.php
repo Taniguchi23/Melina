@@ -4,6 +4,13 @@
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="Encuestas Políticas Online de Candidatos y Partidos en Elecciones Distritales y Regionales 2022,
+     Encuestas por Internet. Noticias de principales Encuestadoras.">
+    <meta name="author" content="Encuestas Virtuales">
+    <meta http-equiv="Expires" content="0">
+    <meta http-equiv="Last-Modified" content="0">
+    <meta http-equiv="Cache-Control" content="no-cache, mustrevalidate">
+    <meta http-equiv="Pragma" content="no-cache">
     <title>Encuesta | Pagina Oficial</title>
     <link href="/assets/css/media_query.css" rel="stylesheet" type="text/css"/>
     <link href="/assets/css/bootstrap.css" rel="stylesheet" type="text/css"/>
@@ -14,7 +21,7 @@
     <link href="/assets/css/owl.carousel.css" rel="stylesheet" type="text/css"/>
     <link href="/assets/css/owl.theme.default.css" rel="stylesheet" type="text/css"/>
     <!-- Bootstrap CSS -->
-    <link href="/assets/css/style_1.css" rel="stylesheet" type="text/css"/>
+    <link href="/assets/css/style_1.css?v1" rel="stylesheet" type="text/css"/>
     <!-- Modernizr JS -->
     <script src="/assets/js/modernizr-3.5.0.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
@@ -208,7 +215,7 @@
 <!-- Waypoints -->
 <script src="/assets/js/jquery.waypoints.min.js"></script>
 <!-- Main -->
-<script src="/assets/js/main.js"></script>
+<script src="/assets/js/main.js?v1"></script>
 
 </body>
 </html>

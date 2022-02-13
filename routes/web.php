@@ -11,6 +11,7 @@ use App\Http\Controllers\ApiController;
 use App\Http\Controllers\PartidoController;
 use Illuminate\Support\Facades\Artisan;
 use App\Http\Controllers\JobsController;
+use App\Http\Controllers\DatosController;
 
 
 //web
@@ -22,6 +23,29 @@ Route::get('/jobs/primero',[JobsController::class,'firstJob']);
 Route::get('imagen',[WebController::class,'edit_all']);
 Route::get('/llacta', function (){
     Artisan::call('storage:link');
+});
+// borrar caché de la aplicación
+Route::get('/clear-cache', function() {
+    $exitCode = Artisan::call('cache:clear');
+    return 'Application cache cleared';
+});
+
+// borrar caché de ruta
+Route::get('/route-cache', function() {
+    $exitCode = Artisan::call('route:cache');
+    return 'Routes cache cleared';
+});
+
+// borrar caché de configuración
+Route::get('/config-cache', function() {
+    $exitCode = Artisan::call('config:cache');
+    return 'Config cache cleared';
+});
+
+// borrar caché de vista
+Route::get('/view-clear', function() {
+    $exitCode = Artisan::call('view:clear');
+    return 'View cache cleared';
 });
 Route::get('/monse',[ApiController::class,'geoip']);
 Route::get('/geoip',function (){
@@ -69,7 +93,6 @@ Route::group(['middleware'=> 'auth'], function (){
     Route::post('/eventos/actualizar/{id}',[EventoController::class,'update'])->name('evento.update');
     Route::get('/eventos/{id}',[EventoController::class,'delete'])->name('evento.delete');
 
-
     //partidos
     Route::controller(PartidoController::class)->group(function (){
         Route::get('/partidos','index')->name('partido.index');
@@ -78,6 +101,15 @@ Route::group(['middleware'=> 'auth'], function (){
         Route::get('partidos/editar/{id}','edit')->name('partido.edit');
         Route::post('/partidos/actualizar/{id}','update')->name('partido.update');
         Route::get('/partidos/{id}','delete')->name('partido.delete');
+    });
+
+    //datos
+    Route::controller(DatosController::class)->group(function (){
+        Route::get('/datos','index')->name('dato.index');
+        Route::post('/datos/buscar','buscar')->name('dato.buscar');
+        Route::get('/datos/editar/{id}','edit')->name('dato.edit');
+        Route::post('/datos/actualizar/{id}','update')->name('datos.update');
+
     });
 });
 
