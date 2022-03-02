@@ -67,7 +67,7 @@
 
                                 <div class="row">
                                     <div class="col-12">
-                                        <button type="submit" class="btn btn-success float-right" >Editar</button>
+                                        <button type="submit" class="btn btn-success float-right" >Guardar</button>
                                     </div>
                                 </div>
                             </form>

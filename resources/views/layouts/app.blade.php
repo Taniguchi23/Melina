@@ -7,11 +7,8 @@
     <meta name="description" content="Encuestas Políticas Online de Candidatos y Partidos en Elecciones Distritales y Regionales 2022,
      Encuestas por Internet. Noticias de principales Encuestadoras.">
     <meta name="author" content="Encuestas Virtuales">
-    <meta http-equiv="Expires" content="0">
-    <meta http-equiv="Last-Modified" content="0">
-    <meta http-equiv="Cache-Control" content="no-cache, mustrevalidate">
-    <meta http-equiv="Pragma" content="no-cache">
-    <title>Encuesta | Pagina Oficial</title>
+
+    <title>Encuestas Virtuales | Página Oficial</title>
     <link href="/assets/css/media_query.css" rel="stylesheet" type="text/css"/>
     <link href="/assets/css/bootstrap.css" rel="stylesheet" type="text/css"/>
     <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"
@@ -21,10 +18,17 @@
     <link href="/assets/css/owl.carousel.css" rel="stylesheet" type="text/css"/>
     <link href="/assets/css/owl.theme.default.css" rel="stylesheet" type="text/css"/>
     <!-- Bootstrap CSS -->
-    <link href="/assets/css/style_1.css?v1" rel="stylesheet" type="text/css"/>
+
+    <link href="/assets/css/style_1.css?v={{time()}}" rel="stylesheet" type="text/css"/>
+
     <!-- Modernizr JS -->
     <script src="/assets/js/modernizr-3.5.0.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+
+    <link rel="apple-touch-icon" sizes="180x180" href="/assets/images/logo-encuestas-02.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/assets/images/logo-encuestas-03.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/assets/images/logo-encuestas-04.png">
+    <link rel="manifest" href="/site.webmanifest">
 </head>
 <body class="single">
 <div class="container-fluid fh5co_header_bg">
@@ -36,7 +40,7 @@
                     <div class="fh5co_treding_position_absolute"></div>
                 </div>
                 {{-- <a href="#" class="color_fff fh5co_mediya_setting">Instagram’s big redesign goes live</a> --}}
-                <div>
+                <div class="share-social">
                     <div class="text-center d-inline-block justify-content-sm-end">
                         <a href="https://www.facebook.com/Encuestas-Virtuales-102729698997472" target="_blank" class="fh5co_display_table"><div class="fh5co_verticle_middle"><i class="fa fa-twitter"></i></div></a>
                     </div>
@@ -49,7 +53,7 @@
     </div>
 </div>
 <div class="container-fluid">
-    <div class="container" style="margin: 30px auto;">
+    <div class="container banner-top">
         <div class="row">
             <div class="col-12 col-md-3 fh5co_padding_menu">
                 <a href="/"><img src="/assets/images/logo-svg.svg" alt="img" class="fh5co_logo_width"/></a>
@@ -72,7 +76,7 @@
                 </div> --}}
                 <!--<div class="d-inline-block text-center"><img src="images/country.png" alt="img" class="fh5co_country_width"/></div>-->
                 <div>
-                    <img src="/assets/images/banner-web_v2-v.png" alt="img"/>
+                    <img src="/assets/images/banner-web_v2-v.png" class="baner_image" alt="img"/>
                 </div>
 
                 <div class="clearfix"></div>

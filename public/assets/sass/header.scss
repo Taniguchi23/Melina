@@ -1,0 +1,27 @@
+@media (max-width: 900px) { 
+
+    .baner_image {
+        display: none;
+    }
+  }
+
+  .banner-top {
+      margin-top: 30px;
+      margin-bottom: 20px;
+  }
+
+  @media(max-width: 770px) {
+    .fh5co_mediya_center {
+        display: block;
+    }
+    .fh5co_padding_menu {
+        display: none;
+    }
+    .share-social {
+        margin-top: 15px;
+    }
+
+    .banner-top {
+        margin-top: 0;
+    }
+  }

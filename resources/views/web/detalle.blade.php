@@ -79,7 +79,7 @@
                         @endforeach
                     </div>
                     <div>
-                        <div class="fh5co_heading fh5co_heading_border_bottom pt-3 py-2 mb-4">Ãšltimas Encuestas</div>
+                        <div class="fh5co_heading fh5co_heading_border_bottom pt-3 py-2 mb-4">Últimas Encuestas</div>
                     </div>
                     @foreach ($e as $eve)
                         <div class="row pb-3">
@@ -315,7 +315,7 @@
             let votosMap = dataFilter.map(elm => elm.votos)
 
             let colorMap = dataFilter.map(elm => setBg())
-            
+
             let votosName = nameMap.map((elm, index) => [elm, votosMap[index]])
             console.log(votosName)
 

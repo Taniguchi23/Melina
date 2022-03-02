@@ -22,7 +22,7 @@
         <!-- Main content -->
         <section class="content">
             <div class="container-fluid">
-                <form action="{{route('evento.update',$dato->id)}}" method="post" enctype="multipart/form-data">
+                <form action="{{route('datos.update',$dato->id)}}" method="post" enctype="multipart/form-data">
                     @csrf
                     <div class="row">
 
